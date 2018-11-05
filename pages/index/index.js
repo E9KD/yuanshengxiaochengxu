@@ -715,12 +715,12 @@ Page({
   // 去打卡
   godaka: function(e) {
     var that = this;
-    var goid = e.currentTarget.dataset.typeid;
+    var goid = this.data.openbuka;//e.currentTarget.dataset.typeid;
     console.log(e);
     var id = that.data.radardaka;
     var sday = that.data.sday;
     if (id == 0) {
-      if (goid == 0) {
+      if (goid == 200) {
         wx.navigateTo({
           url: '../ydaka/ydaka?id=0&sday=' + sday,
         })
@@ -733,6 +733,26 @@ Page({
       that.showMessage('暂未开启,敬请期待');
     }
   },
+  // godaka: function(e) {
+  //   var that = this;
+  //   var goid = e.currentTarget.dataset.typeid;
+  //   console.log(e);
+  //   var id = that.data.radardaka;
+  //   var sday = that.data.sday;
+  //   if (id == 0) {
+  //     if (goid == 0) {
+  //       wx.navigateTo({
+  //         url: '../ydaka/ydaka?id=0&sday=' + sday,
+  //       })
+  //     } else {
+  //       wx.navigateTo({
+  //         url: '../ydaka/ydaka?id=1&sday=' + sday,
+  //       })
+  //     }
+  //   } else {
+  //     that.showMessage('暂未开启,敬请期待');
+  //   }
+  // },
   yingyanglist: function(e) {
     var that = this;
     var id = that.data.userInfo.userid;

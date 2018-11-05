@@ -101,8 +101,13 @@ page {
   margin: 10px;
 }
 .bt-center{
-  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
-  border-radius: 50px;
+  border-radius:50px;
+background:linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+margin:0 auto;
+height:30px;
+line-height:30px;
+color:#fff;
+width:100px;
 }
 .bt_v2 {
   padding-top: 30px;
