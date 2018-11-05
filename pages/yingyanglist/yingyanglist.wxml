@@ -17,7 +17,7 @@
             </view>
           </view>
         </view>
-      </block>
+      </block> 
       <block wx:else>
         <view class="result-item" wx:for="{{searchSongList}}" wx:key="key" wx:key="unique" data-data="{{item}}">
           <view class='ju' bindtap="yszbg" data-arr="{{item}}">

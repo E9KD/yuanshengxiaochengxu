@@ -262,7 +262,7 @@ Page({
         var url = API_URL + 'getassess2';
         var kid = {
           pid: questiontype,
-          total: arr.total,
+          total: arr.total, 
         };
         util.getAj(url, kid, 'GET', function(data) {
           console.log(data);

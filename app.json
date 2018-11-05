@@ -37,7 +37,8 @@
     "pages/newsDetail/newsDetail",
     "pages/yingyanglist/yingyanglist",
     "pages/ydaka/ydaka",
-    "pages/yszbg/yszbg"
+    "pages/yszbg/yszbg",
+    "pages/changeheight/changeheight"
   ],
   "window": {
     "navigationBarTextStyle": "#fff",

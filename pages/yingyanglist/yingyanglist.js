@@ -52,7 +52,7 @@ Page({
           title: '营养调查表',
         })
         break;
-    }
+    }  
   },
   onShow: function () {
     var that = this;
@@ -116,6 +116,7 @@ Page({
   },
   //搜索，访问网络  
   fetchSearchList: function () {
+    console.log(123);
     let that = this;
     let searchKeyword = that.data.userInfo.userid, //输入框字符串作为参数  
       searchPageNum = that.data.searchPageNum, //把第几次加载次数作为参数  

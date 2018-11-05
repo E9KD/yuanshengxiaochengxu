@@ -158,7 +158,6 @@ page {
 }
 
 .datetime .tm {
-  flex: 1;
   text-align: right;
   overflow: hidden;
 }
