@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container-ulist">
+  <block wx:if="{{list==0}}">
+    <view style='text-align:center;font-size:14px;color:#515151'>
+      当前数据为空请添加
+    </view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{list}}" wx:key="i">
+      <view class="item">
+        <view bindtap='usercount' data-arr='{{item}}' class="navigator-item">
+          <view class="navigator-item">
+            <view class="UserName">
+              <view class="UserPic">
+                <text class='userTou'>{{item.name}}</text>
+                <view class='Uico'>
+                  <block wx:if="{{item.sex == 1}}">
+                    <image src="../../image/boy.png" mode="widthFix" class='userIco'></image>
+                  </block>
+                  <block wx:else>
+                    <image src="../../image/gril.png" mode="widthFix" class='userIco'></image>
+                  </block>
+                </view>
+              </view>
+              <view class="UserDate-a">
+                年龄：{{item.age}}岁
+              </view>
+            </view>
+            <view class="textCms">期望身高：{{item.qiwangheight}}CM</view>
+            <view class="textCms">目前身高：{{item.infos.nowheight}}CM</view>
+            <view class="textCms">母亲身高：{{item.mheight}}CM</view>
+            <view class="textCms">父亲身高：{{item.fheight}}CM</view>
+            <view class="textCms">未来身高：{{item.fm.m}}~{{item.fm.f}}CM</view>
+            <view class="datetime">
+              <label class="tm">
+                <image src="../../image/time.png" class="tmimg"></image>{{item.time}}</label>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

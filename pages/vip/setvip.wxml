@@ -1,0 +1,26 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class='container'>
+  <form bindsubmit="setVipToUser">
+
+    <view class="title">比尔高VIP兑换</view>
+
+    <view class=''>
+      <view class="form-item-bd">
+        <input type="text" name="number" value="" placeholder='请输入兑换码' />
+      </view>
+    </view>
+
+    <view class='b-tp'>
+     <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">兑换</button>
+    </view>
+  </form>
+
+  
+  <view class="guize">
+    <view style="color:#555;">兑换规则：</view>
+    <view>1.查询比尔高产品获得VIP兑换码</view>
+    <view>2.兑换成功后您将获得免费享受本小程序的咨询服务以及课程</view>
+  </view>
+  
+</view>

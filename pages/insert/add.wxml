@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='box'>
+  <form bindsubmit="savePersonInfo">
+    <input type='text' name="id" value="{{uid}}" hidden='true'></input>
+    <input type='text' name="openid" value="{{openid}}" hidden='true'></input>
+    <input type='text' name="name" value="{{uname}}" hidden='true'></input>
+    <view class='insinfo'>
+      <view style='width:100%;text-align:center;'>修改目前身高</view>
+      <view class="form-item-bd">
+        <picker bindchange="changeNowheight" mode="selector" range="{{nowheightName}}" value="{{provinceDefIndex}}">
+          <view class="input">{{nowheightName[provinceSelIndex1] || '请选择目前身高'}}{{!nowheightName[provinceSelIndex1]  ? '' : 'CM'}}</view>
+          <input type="text" name="nowheight" value="{{nowheightName[provinceSelIndex1]}}" class="hidden" />
+        </picker>
+      </view> 
+    </view>
+    <view class='b-tp'>
+      <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">GO</button>
+    </view>
+  </form>
+  </view>
+  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>
+</view>

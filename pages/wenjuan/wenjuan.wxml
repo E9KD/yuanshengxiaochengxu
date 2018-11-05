@@ -1,0 +1,308 @@
+<view wx:if="{{lookmoshi}}">
+  <!-- <view>
+    <image src="http://img.mp.itc.cn/upload/20161125/baec6873019940a683d645628b4306b7_th.jpg"></image>
+  </view> -->
+  <!-- <view class='bg-blur' style='background:#fff'></view>
+  <view class='jz' style='width:{{windowwidth}}px;height:1005;'>
+    <view class='jz' style='width:{{windowwidth/2}}px;height:420px;padding-top:50px;'>
+      <image src='{{pimg}}' style='width:{{windowwidth/2}}px;height:{{height-135}}px'></image>
+      <view style='width:{{windowwidth/2}}px;'>
+        <navigator open-type='switchTab' url='/pages/index/index' class='nav' style='width:100%'>
+          首页
+        </navigator>
+      </view>
+    </view>
+  </view> -->
+  <view class="wenjuan">
+    <view class='head' style="height:{{swiperheight}}px">
+      <image src='../../image/wenjuan_top.png'></image>
+    </view>
+    <!-- 表单部分 -->
+    <form bindsubmit="savePerson">
+      <view class='content' style=' width:{{windowall}}px;'>
+        <!-- 姓名年龄 -->
+        <view class='top_ipt' style='margin-top:10px;margin-bottom:10px;overflow:hidden;'>
+           <input type="hidden" name="childid"  style="height:0px;display:none;" value='{{options.childid}}' />
+           <input type="hidden" name="picker_hx" style="height:0px;display:none;"  value='{{options.picker_hx}}' />
+            <input type="text" name="username"  disabled="disabled" style='width:{{windowlabel - 5}}px;' value='{{options.username}}' />
+            <input type="text" name="useryear"  disabled="disabled" style='float:right;width:{{windowlabel - 5}}px;' value='{{options.useryear}}' />
+        </view>
+        <!-- 营养方面 -->
+        <view class='content-one'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">营养方面</view>
+          <!-- 食欲 -->
+          <view>
+            <view>
+              <label style='width:{{windowlabel}}px;'>有没有食欲？</label>
+              <!-- 单选 -->
+              <input type="text" name="shiyu" disabled="disabled"  style='width:{{windowlabel}}px;' value='{{options.breakfast}}'/>
+            </view>
+            <!-- 早 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>早饭吃了什么？</label>
+              <input  disabled="disabled" type="text" name="breakfast" disabled="disabled"  style='width:{{windowlabel}}px;' value='{{options.breakfast}}' />
+            </view>
+            <!-- 午饭 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>午饭吃了什么？</label>
+              <input  disabled="disabled" type="text" name="lunch" style='width:{{windowlabel}}px;' value='{{options.lunch}}' />
+            </view>
+            <!-- 晚饭 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>晚饭吃了什么？</label>
+              <input  disabled="disabled" type="text" name="dinner" style='width:{{windowlabel}}px;' value='{{options.dinner}}' />
+            </view>
+          </view>
+        </view>
+        <!-- 运动方面 -->
+        <view class='content-one'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">运动方面</view>
+          <!-- 运动 -->
+          <view style='heigth:150px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>有运动吗？</label>
+              <!-- 单选 -->
+              <input  disabled="disabled" type="text" name="sport" style='width:{{windowlabel}}px;' value='{{options.sport}}' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>做了几次运动？</label>
+              <input  disabled="disabled" type="text" name="sporttime" style='width:{{windowlabel}}px;' value='{{options.sporttime}}' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>做了什么运动？</label>
+              <input  disabled="disabled" type="text" name="sporttype" style='width:{{windowlabel}}px;' value='{{options.sporttype}}' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>运动多长时间？</label>
+              <input  disabled="disabled" type="text" name="sporthour" style='width:{{windowlabel}}px;' value='{{options.sporthour}}' />
+            </view>
+          </view>
+        </view>
+        <!-- 睡眠方面 -->
+        <view class='content-one' style='height:120px;'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">睡眠方面</view>
+
+          <!-- -->
+          <view style='height:75px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>昨晚几点睡觉？</label>
+              <!-- 单选 -->
+              <input  disabled="disabled" type="text" name="sleep" style='width:{{windowlabel}}px;' value='{{options.sleep}}' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>今早几点起床？</label>
+              <input  disabled="disabled" type="text" name="getup" style='width:{{windowlabel}}px;' value='{{options.getup}}' />
+            </view>
+
+
+          </view>
+        </view>
+        <!-- 情绪方面 -->
+        <view class='content-one' style='height:120px;'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">情绪方面</view>
+          <!-- -->
+          <view style='height:75px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>在学校开心吗?</label>
+              <!-- 单选 -->
+              <input  disabled="disabled" type="text" name="school" style='width:{{windowlabel}}px;' value='{{options.school}}' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>回家后开心吗？</label>
+              <input  disabled="disabled" type="text" name="home" style='width:{{windowlabel}}px;' value='{{options.home}}' />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='sharefooter' style='height:100px;'>
+        <button formType="submit" plain='true' style='border:0px;line-height:1.5'>
+          <view class='footer-title'>点击分享给您的专属指导老师</view>
+          <view class='footer-text'>进行一对一专业分析</view>
+        </button>
+      </view>
+    </form>
+  </view>
+  <!--catchtap="cemojiCfBg"  -->
+  <view class="cf-bg" style="z-index:999;display:{{cfBg ? 'block' : 'none'}}">
+    <view class='bg-blur' style='background:#fff'></view>
+    <view class='jz' style='width:{{windowwidth}}px;height:1005;'>
+      <view class='jz' style='width:{{windowwidth/2}}px;height:420px;padding-top:50px;'>
+        <image src='{{shareImage}}' style='width:{{windowwidth/2}}px;height:{{height-135}}px'></image>
+        <view style='width:{{windowwidth/2}}px;'>
+          <button open-type='share' plain='true'>
+            分享
+          </button>
+          <view class='nav' bindtap='backhome'>
+            首页
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <canvas canvas-id="shr" style="width:{{windowwidth}}px;height:{{windowhieght}}px"></canvas>
+</view>
+<view wx:else>
+  <view class="wenjuan">
+    <view class='head' style="height:{{swiperheight}}px">
+      <image src='../../image/wenjuan_top.png'></image>
+    </view>
+    <!-- 表单部分 -->
+    <form bindsubmit="savePersonInfo">
+      <view class='content' style=' width:{{windowall}}px;'>
+        <!-- 姓名年龄 -->
+        <view class='top_ipt' style='margin-top:10px;margin-bottom:10px;overflow:hidden;'>
+          <block wx:if="{{childlists[hx_index].id}} != false">
+
+            <picker name="picker_hx" value="{{childlists[hx_index].id}}" data-age='{{childlists[hx_index].age}}' data-selecthx="{{childlists[hx_index].name}}" range="{{childlists}}" range-key="{{'name'}}" bindchange="bindPickerChange_hx">
+
+              <view type="text" placeholder='姓名' style='width:{{windowlabel - 5}}px;float:left;font-size:30rpx;background:#fff;border-radius:5px;height:30px;line-height:30px;'>{{childlists[hx_index].name}}</view>
+
+              <input type="hidden" style="height:0px;display:none;" name="username" value="{{childlists[hx_index].name}}"></input>
+              <input type="hidden" style="height:0px;display:none;" name="childid" value="{{childlists[hx_index].id}}"></input>
+
+              <input type="text" name="useryear" placeholder='年龄' disabled="true" style='float:right;width:{{windowlabel - 5}}px;' value='{{childlists[hx_index].age}}' />
+
+            </picker>
+
+          </block>
+          <block wx:else>
+            <input type="text" name="username" placeholder='姓名' style='width:{{windowlabel - 5}}px;' value='' />
+            <input type="text" name="useryear" placeholder='年龄' style='float:right;width:{{windowlabel - 5}}px;' value='' />
+          </block>
+
+        </view>
+        <!-- 营养方面 -->
+        <view class='content-one'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">营养方面</view>
+          <!-- 食欲 -->
+          <view>
+            <view>
+              <label style='width:{{windowlabel}}px;'>有没有食欲？</label>
+              <!-- 单选 -->
+              <input type="text" name="shiyu" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- 早 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>早饭吃了什么？</label>
+              <input type="text" name="breakfast" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- 午饭 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>午饭吃了什么？</label>
+              <input type="text" name="lunch" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- 晚饭 -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>晚饭吃了什么？</label>
+              <input type="text" name="dinner" style='width:{{windowlabel}}px;' />
+            </view>
+          </view>
+        </view>
+        <!-- 运动方面 -->
+        <view class='content-one'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">运动方面</view>
+          <!-- 运动 -->
+          <view style='heigth:150px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>有运动吗？</label>
+              <!-- 单选 -->
+              <input type="text" name="sport" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>做了几次运动？</label>
+              <input type="text" name="sporttime" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>做了什么运动？</label>
+              <input type="text" name="sporttype" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>运动多长时间？</label>
+              <input type="text" name="sporthour" style='width:{{windowlabel}}px;' />
+            </view>
+          </view>
+        </view>
+        <!-- 睡眠方面 -->
+        <view class='content-one' style='height:120px;'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">睡眠方面</view>
+
+          <!-- -->
+          <view style='height:75px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>昨晚几点睡觉？</label>
+              <!-- 单选 -->
+              <input type="text" name="sleep" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>今早几点起床？</label>
+              <input type="text" name="getup" style='width:{{windowlabel}}px;' />
+            </view>
+
+
+          </view>
+        </view>
+        <!-- 情绪方面 -->
+        <view class='content-one' style='height:120px;'>
+          <!-- 标题 -->
+          <view class="weui-media-box__title">情绪方面</view>
+          <!-- -->
+          <view style='height:75px;'>
+            <view>
+              <label style='width:{{windowlabel}}px;'>在学校开心吗?</label>
+              <!-- 单选 -->
+              <input type="text" name="school" style='width:{{windowlabel}}px;' />
+            </view>
+            <!-- -->
+            <view>
+              <label style='width:{{windowlabel}}px;'>回家后开心吗？</label>
+              <input type="text" name="home" style='width:{{windowlabel}}px;' />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='sharefooter' style='height:100px;'>
+        <button formType="submit" plain='true' style='border:0px;line-height:1.5'>
+          <view class='footer-title'>点击分享给您的专属指导老师</view>
+          <view class='footer-text'>进行一对一专业分析</view>
+        </button>
+      </view>
+    </form>
+  </view>
+  <!--catchtap="cemojiCfBg"  -->
+  <view class="cf-bg" style="z-index:999;display:{{cfBg ? 'block' : 'none'}}">
+    <view class='bg-blur' style='background:#fff'></view>
+    <view class='jz' style='width:{{windowwidth}}px;height:1005;'>
+      <view class='jz' style='width:{{windowwidth/2}}px;height:420px;padding-top:50px;'>
+        <image src='{{shareImage}}' style='width:{{windowwidth/2}}px;height:{{height-135}}px'></image>
+        <view style='width:{{windowwidth/2}}px;'>
+          <button open-type='share' plain='true'>
+            分享
+          </button>
+          <view class='nav' bindtap='backhome'>
+            首页
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <canvas canvas-id="shareCanvas" style="width:{{windowwidth}}px;height:{{windowhieght}}px"></canvas>
+  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}" style='width: 200px;margin-left: -100px;'>
+    {{messageContent}}
+  </view>
+</view>

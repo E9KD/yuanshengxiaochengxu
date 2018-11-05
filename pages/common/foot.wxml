@@ -1,0 +1,5 @@
+<template name="foot">
+  <view class="footer">
+    @云勉健康咨询有限公司
+  </view>
+</template>

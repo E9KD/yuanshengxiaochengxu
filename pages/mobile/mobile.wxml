@@ -1,0 +1,31 @@
+<!--pages/mobile/mobile.wxml-->
+<import src="../common/foot.wxml" />
+<view class="mobileMain">
+
+  <form bindsubmit="formBindsubmit" bindreset="formReset">
+    <view class="mine-top">
+      <view class="classname">
+          <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="classname">
+        <text>{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class="mbInput">
+      <input name="avatarUrl" value="{{userInfo.avatarUrl}}" style="display:none" />
+      <input name="openid" value="{{openid}}" style="display:none" />
+      <input name="genDer" value="{{userInfo.gender}}" style="display:none" />
+      <input name="nickName" value="{{userInfo.nickName}}" style="display:none" />
+      <input class="tels" name="tel" placeholder="您的手机号码" bindinput="mobileInputEvent" type="number" maxlength="11" />
+      <input class="msCode" name="telCode" placeholder="请填写验证码" type="number" maxlength="5" />
+      <button size="mini" disabled="{{disabled}}" bindtap="reSendPhoneNum" class="Dtime">{{btnName}}{{time}}</button>
+    </view>
+
+    <view class="mbBtn">
+      <button class="vBtn_add" form-type="submit" bindtap="nextStep">提交保存</button>
+    </view>
+  </form>
+
+  <template is="foot" />
+
+</view>

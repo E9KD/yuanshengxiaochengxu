@@ -1,0 +1,237 @@
+<import src="../../wxParse/wxParse.wxml" />
+<video id="myVideo" src="{{video_url}}" style="z-index:100;display:{{cfBg ? 'block' : 'block'}};height:{{swiperheight}}px" class='video clearfix {{navFixed?"positionFixed-video":""}}' bindplay="bindplay" bindpause="bindpause" bindended="bindended"></video>
+<scroll-view class="layout" bindscroll='layoutScroll' scroll-y="true" scroll-top="{{scrollTop}}">
+  <!-- 上边文字 -->
+  <view class='coursetwo-top'>
+    <view class='coursetwo-top-all'>
+      <view class='title'>
+        {{goodsData.title}}
+      </view>
+      <view class='coursetwo-top-buy'>
+        <black style="color:red">热销中</black>
+        <!-- 30000人查询 -->
+        <!-- 15人查询 | 好评度- 0人评论 -->
+      </view>
+      <view class='price'>
+        <block wx:if="{{goodsData.money_enum == 1}}">
+          <view style="font-size:12px;">￥限免</view>
+        </block>
+        <block wx:else>
+          {{goodsData.price}} ￥
+        </block>
+      </view>
+    </view>
+  </view>
+  <!--选项卡  -->
+  <view class="clearfix" style='height:{{navFixed?swiperheight + 52:52}}px'>
+    <view class='nav clearfix {{navFixed?"positionFixed":""}}' style='top:{{navFixed?swiperheight:0}}px'>
+      <!-- 头部选项 -->
+      <view class="{{currentTab==0 ? 'on' :'off'}}" data-current="0" bindtap="clickTab" style='float:left;width:43%;line-height:50px;'>课程概述</view>
+      <view class="{{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='float:right;width:43%;line-height:50px;'>课程目录</view>
+      <!-- 头部选项 -->
+      <block wx:if="{{openfenxiao}}">
+        <view class='back-index' bindtap="sharepic" id="{{goodsData.id}}" data-img='{{goodsData.class_url_img}}'>
+          <image style='width:90rpx;height:90rpx;' src="../../image/xiao.jpg"></image>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='back-index' bindtap="backHome">
+          <image src='../../image/bachome.png' style='width:90rpx;height:90rpx;'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view style="display:{{currentTab==0 ? 'block' : 'none'}}">
+    <!-- 老师介绍部分 -->
+    <view class='teacher coursetwo-about-text'>
+      <view class='about coursetwo-about'>
+        老师介绍
+      </view>
+    </view>
+    <!-- 赵辉大图 -->
+
+    <view class="teacher_image" style="background-image:url('{{goodsData.teacherinfo.faceimg}}')"></view>
+    <view class="coursetwo-about-text" style="font-size:17px;color:#555;text-align:center;">{{goodsData.teacherinfo.name}}</view>
+    <view class="coursetwo-about-text coursetwo-about-text-span">
+
+      <template is="wxParse" data="{{wxParseData:teacher_info.nodes}}" />
+
+
+    </view>
+
+    <!-- <view class='zhaohui'>
+      <image ></image>
+    </view> -->
+    <!-- 适用人群 -->
+    <view class='coursetwo-about-text'>
+      <view class='coursetwo-about'>
+        适用人群
+      </view>
+
+      <!-- <view class='coursetwo-about-text-title'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view> -->
+      <view class='coursetwo-about-text-span'>
+        <view>一、不了解长高知识的父母</view>
+        <view>二、想系统学习身高管理的父母</view>
+        <view>三、想让孩子长到理想身高的父母</view>
+        <view>四、0-18岁成长关键期孩子的父母</view>
+      </view>
+    </view>
+    <!-- 课程介绍 -->
+    <view class='coursetwo-about-text'>
+      <view class='coursetwo-about'>
+        课程介绍
+      </view>
+
+      <!-- <view class='coursetwo-about-text-title'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view> -->
+      <view class='coursetwo-about-text-span'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <!-- 发育规律 -->
+    <!-- <view class='rule'>
+      <view wx:if="{{goodsData.class_url_img == '' || goodsData.class_url_img == NULL}}">
+      </view>
+      <view wx:else>
+        <image src='{{goodsData.class_url_img}}'></image>
+      </view>
+    </view> -->
+  </view>
+
+  <view style="display:{{currentTab==1 ? 'block' : 'none'}}">
+    <view class='coursetwo-about-text'>
+      <block wx:for="{{classlists}}" wx:key="key">
+        <block wx:if="{{item != false && item !== true}}">
+          <view class="coursetwo-about-text-one" bindtap='changevideourl' data-playid='{{item.id}}' data-playurl='{{item.content}}' data-isset='{{isset || isVip}}' data-status='{{item.status}}' loading="{{loading}}" id='{{goodsData.id}}' data-url="{{goodsData.video_url}}"
+            data-pay="" data-abv="{{goodsData.abv_enum}}" data-title="{{goodsData.title}}">
+            <!-- <black style="color:#608B4E;display:{{playid == item.id ?'display':'none'}}">○</black> -->
+            <view class='avbiaoti' style="color:{{playid == item.id ?'#f2892c':'#777'}}">{{item.title}}</view>
+
+            <view wx:if="{{isset || isVip}}" style='width:15%;padding:5px;'>
+              <view style="height:30px;"></view>
+            </view>
+            <view wx:else style='width:15%;text-align:center;padding:5px;'>
+              <block wx:if="{{item.status}}">
+                <black style="color:red;font-size:.80rem;">￥</black>
+              </block>
+              <block wx:else>
+                <view style="height:30px;"></view>
+              </block>
+            </view>
+
+          </view>
+        </block>
+
+      </block>
+    </view>
+  </view>
+  <view style='width:100%;height:41px;'></view>
+
+</scroll-view>
+
+
+
+<view class="backhome" style="bottom: 0;">
+  <block wx:if="{{goodsData.abv_enum == 0}}">
+    <view class='share-give'>
+      <!-- <button class='share' open-type="share" id='{{goodsData.id}}'>
+        <image src="../../image/fenxiang.png"></image>分享
+      </button> -->
+      <!-- <button class='give' open-type="share" id='{{goodsData.id}}' style="display:{{status ? 'display':'none'}}">
+        赠送好友
+      </button> -->
+    </view>
+
+    <block wx:if="{{isset || isVip}}">
+      <view class='buy' bindtap="playAv" id='{{goodsData.id}}' data-url="{{goodsData.video_url}}" data-pay="" data-abv="{{goodsData.abv_enum}}" data-title="{{goodsData.title}}" data-name="{{goodsData.teacherinfo.name}}">
+        立即播放
+      </view>
+    </block>
+    <block wx:else>
+      <view class='buy' bindtap="emojiShowHide" loading="{{loading}}" id='{{goodsData.id}}'>
+        立即查询
+      </view>
+      <!-- <view class='buy' type="primary" bindtap="requestPayment" loading="{{loading}}" id='{{goodsData.id}}'>
+        立即查询
+      </view> -->
+    </block>
+  </block>
+  <block wx:elif="{{goodsData.abv_enum == 1}}">
+    <view class='share-give'>
+      <!-- <button class='share' open-type="share" id='{{goodsData.id}}'>
+        <image src="../../image/fenxiang.png"></image>分享
+      </button> -->
+      <!-- <button class='give' open-type="share" id='{{goodsData.id}}' style="display:{{status ? 'display':'none'}}">
+        赠送好友
+      </button> -->
+    </view>
+    <block wx:if="{{isset || isVip}}">
+
+      <view class='buy' bindtap="playAv" id='{{goodsData.id}}' data-url="{{goodsData.video_url}}" data-pay="" data-abv="{{goodsData.abv_enum}}" data-title="{{goodsData.title}}" data-name="{{goodsData.teacherinfo.name}}">
+        立即观看
+      </view>
+    </block>
+    <block wx:else>
+      <view class='buy' bindtap="emojiShowHide" loading="{{loading}}" id='{{goodsData.id}}'>
+        立即查询
+      </view>
+      <!-- <view class='buy' type="primary" bindtap="requestPayment" loading="{{loading}}" id='{{goodsData.id}}' data-url="{{goodsData.video_url}}" data-pay="" data-abv="{{goodsData.abv_enum}}" data-title="{{goodsData.title}}">
+        立即查询
+      </view> -->
+    </block>
+
+  </block>
+  <block wx:else>
+    <view class='share-give'>
+      <!-- <button class='share' open-type="share" id='{{goodsData.id}}'>
+        <image src="../../image/fenxiang.png"></image>分享
+      </button> -->
+      <!-- <button class='give' open-type="share" id='{{goodsData.id}}' style="display:{{status ? 'display':'none'}}">
+        赠送好友
+      </button> -->
+    </view>
+    <block wx:if="{{isset || isVip}}">
+      <view class='buy' bindtap="showGoods" id='{{goodsData.id}}' pay="">
+        进入直播
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class='buy' bindtap="emojiShowHide" loading="{{loading}}" id='{{goodsData.id}}'>
+        立即查询
+      </view>
+      <!-- <view class='buy' type="primary" bindtap="requestPayment" loading="{{loading}}" id='{{goodsData.id}}'>
+        立即查询
+      </view> -->
+
+    </block>
+  </block>
+</view>
+<!--  -->
+<view class="cf-bg" style="z-index:9999;display:{{cfBg ? 'block' : 'none'}}">
+  <view class='bg-blur' style='background:#fff'></view>
+  <view class='jz' style='width:100vw;height:100vh;'>
+    <view class='jz' style='width:90vw;height:100vh;padding-top:{{b}}px;'>
+      <view style='width:100%;height:100px;border:1rpx solid #333;border-radius:5px;margin: auto;  position: absolute;background:#fff; top: 0; left: 0; bottom: 0; right: 0;'>
+        <view style='width:100%;height:28px;'>
+          <view style='width:30px;height:30px;line-height:30px;margin:0 auto;float:right;font-size:16px;text-align:center;' bindtap='colose'>
+            X
+          </view>
+        </view>
+        <view style='position:absolute;width:100%;height:30px;margin:0 auto;float:right;font-size:10pt;text-align:center;'>
+          进入客服消息后，发送"{{buyid}}"获取查询链接
+        </view>
+        <!-- 底部 -->
+        <view style='width:100%;height:40px;overflow:hidden;position:absolute;bottom:0;box-sizing:border-box;'>
+          <button plain='true' style='margin-bottom:0px;height:40px;line-height:40px;float:right;border:none;color:#00B26A;font-size:10pt;' open-type='contact' session-from='{"type": "keceng","unionId":"{{userInfo.unionId}}","userid":"{{userInfo.userid}}","goodsid":"{{buyid}}"}'>马上咨询</button>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

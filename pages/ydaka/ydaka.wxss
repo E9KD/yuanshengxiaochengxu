@@ -1,0 +1,226 @@
+page {
+  width: 100vw;
+  background-image: url('https://wx.biergao.vip/uploads/b/201805/nutrition.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: 100% 100%;
+  font-weight: 100;
+}
+
+.container {
+  width: 100vw;
+    /* height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.top-time {
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  color: #fff;
+  display: flex;
+}
+
+/**index.wxss**/
+
+.container .nav {
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 15px;
+  height: 120px;
+  box-sizing: border-box;
+  align-items: center;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+}
+
+.container .nav .nav-left {
+  height: 100%;
+  white-space: nowrap;
+  justify-content: flex-start;
+}
+
+.nav-left-category {
+  /* display: flex; */
+  float: left;
+  height: 100%;
+  color: #fff;
+}
+
+.top-head {
+  width: 100vw;
+  height: 100px;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  /* position: fixed; */
+}
+
+.top-head2 {
+  width: 100vw;
+  height: 100px;
+  /* position: fixed; */
+}
+
+.top-head-title {
+  margin: 0 auto;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  width: 100vw;
+  margin-top: 20px;
+  text-shadow: 0px 3px 5px #333;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+.top-head-day {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #fff;
+  width: 68px;
+}
+
+.day-num {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: rgb(227, 139, 39);
+  line-height: 30px;
+  font-size: 25px;
+  margin: 2px;
+  box-shadow: 0px 1px 0px 0px #999,
+                /*上边阴影  红色*/ 1px 0px 0px 0px #999,
+                /*左边阴影  绿色*/ 1px 0px 0px 0px #999,
+                /*右边阴影  蓝色*/ 0px 2px 0px 0px #999; /*下边阴影  黄色*/
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.day-day {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: rgb(227, 139, 39);
+  line-height: 30px;
+  font-size: 25px;
+  margin: 2px;
+  box-shadow: 0px 1px 0px 0px #999,
+                /*上边阴影  红色*/ 1px 0px 0px 0px #999,
+                /*左边阴影  绿色*/ 1px 0px 0px 0px #999,
+                /*右边阴影  蓝色*/ 0px 2px 0px 0px #999; /*下边阴影  黄色*/
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.top-pic {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+  height: 90px;
+}
+
+.content {
+  /* margin-top: 100px; */
+  width: 100vw;
+  min-height: 200px;
+}
+
+.content-title {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.list {
+  width: 100vw;
+}
+
+.list-noe {
+  width: 100vw;
+  height: 80px;
+}
+
+.list-tilte {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  color: #fff;
+  line-height: 30px;
+  width: 150px;
+}
+
+.list-one-sex {
+  width: 95vw;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.radio-demo {
+  font-size: 12px !important;
+}
+
+.radio-color {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.list-radio {
+  width: 100%;
+  display: flex;
+}
+
+.bt_v {
+  padding: 50px 50px;
+}
+
+.bt {
+  width: 50vw;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  color: #fff;
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+}
+
+.ainmation {
+  
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  height: 0px;
+  opacity: 0;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+}
+
+.hide-in {
+  animation: hideIn 1s forwards;
+}
+
+@keyframes hideIn {
+  from {
+    opacity: 0;
+    /* -webkit-transform: translate3d(0, 100%, 0); */
+    /* transform: translate3d(0, 100%, 0); */
+    height: 0px;
+    line-height: 0px;
+  }
+
+  to {
+    opacity: 1;
+    /* -webkit-transform: none; */
+    /* transform: none; */
+    height: 200rpx;
+    line-height: 200rpx;
+  }
+}

@@ -1,0 +1,156 @@
+<view class="IndexHome" style='height:{{kuan}}px'>
+  <view class='draw'>
+    <view class='sx'>{{fm}}</view>
+    <label class='m'>预计遗传身高 ( CM )</label>
+  </view>
+</view>
+<!--预测身高  -->
+<view class='yuceheight'>
+  <view class='yuceheight2'>
+    <view class='center'>
+      <view class='lab'>
+        <image src="../../image/icon1.png"></image>
+        <view class='zan'>身高预测</view>
+      </view>
+    </view>
+    <view class='lab2'>
+      {{height[0].title}}
+      <text style='padding-bottom:2rpx;border-bottom:1rpx solid #F7BD68'>{{height[0].msg}}</text>
+    </view>
+    <view class="weui-panel__bd">
+      <!-- </view> -->
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-media-box weui-media-box_text">
+          <!-- // 当前身高， 高于全国平均身高11.7厘米
+        // 当前身高，与理想身高相差42.5cm，通过科学干预，身高将突破遗传，达到180.5cm
+        // 若后天身高管理不善，身高将低于遗传身高，下降至身高下限165.5cm. -->
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black>
+            <block wx:if="{{msg[0].chap == 0}}">
+              当前身高，目前已经达到全国平均身高,
+            </block>
+            <block wx:if="{{msg[0].chap > 0}}">
+              当前身高，高于全国平均身高
+              <black style="color:#DE8A12">{{msg[0].chap}}</black>cm,
+            </block>
+            <block wx:if="{{msg[0].chap < 0}}">
+              当前身高，低于全国平均身高
+              <black style="color:#DE8A12">{{msg[0].chap * -1}}</black>cm,
+            </block>
+          </view>
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black>
+            <block wx:if="{{msg[0].cha == 0}}">
+              当前身高，目前已经达到理想身高,
+            </block>
+            <block wx:if="{{msg[0].cha < 0}}">
+              当前身高，低于理想身高
+              <black style="color:#DE8A12">{{msg[0].cha*-1}}</black>cm,
+            </block>
+            <block wx:if="{{msg[0].cha > 0}}">
+              当前身高，高于理想身高
+              <black style="color:#DE8A12">{{msg[0].cha}}</black>cm,
+            </block>
+            通过科学干预，身高将突破遗传，达到
+            <black style="color:#DE8A12">{{msg[0].gmanheight}}</black>cm!
+          </view>
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black> 若后天身高管理不善，身高将低于遗传身高，下降至身高下限
+            <black style="color:#DE8A12">{{msg[0].dmanheight}}</black>cm!
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height:5px;background:#F9F7F8'></view>
+<view class='yuceheight3'>
+  <view class='center'>
+    <view class='lab'>
+      <image src="../../image/icon2.png"></image>
+      <view class='zan'>生长曲线</view>
+    </view>
+  </view>
+  <view class="page__bd" style='padding-top:20px;'>
+    <view class="weui-panel__bd background-white" style='border-top:1rpx solid #F7FFF4'>
+      <view class="weui-media-box-height weui-media-box_text">
+        <view class="weui-cell_primary weui-cell_primary-color-font" style='text-align:center'>@当前数据由世界卫生组织提供</view>
+      </view>
+    </view>
+    <view class="page__bd">
+      <canvas canvas-id="lineCanvas" class="canvas background-white" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+    </view>
+  </view>
+</view>
+<view style='height:5px;background:#F9F7F8'></view>
+<view class='yuceheight4'>
+  <view class='center'>
+    <view class='lab'>
+      <image src="../../image/icon3.png"></image>
+      <view class='zan'>打卡计划</view>
+    </view>
+  </view>
+  <view class="" style='min-height:200px;'>
+    <view class='wrap'>
+      <view class='date-show'>
+        <view class='lt-arrow' bindtap='lastMonth'>
+          <image src='../../image/next.png' mode='aspectFit'></image>
+        </view>
+        <view>
+          {{year}}年{{month}}月
+        </view>
+        <!-- <picker mode="date" value="{{date_time}}" bindchange="bindDateChange" fields="month">
+            <view class="picker">{{date_time}} </view>
+            <view class='rt-arrow'>
+              <image src='../../image/next.png' mode='aspectFit'></image>
+            </view>
+          </picker> -->
+        <view class='rt-arrow' bindtap='nextMonth'>
+          <image src='../../image/next.png' mode='aspectFit'></image>
+        </view>
+        <!-- bindtap='nextMonth' -->
+      </view>
+
+      <view class='header'>
+        <view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}' wx:key="key">{{item}}
+          <view></view>
+        </view>
+      </view>
+      <view class='date-box'>
+        <view wx:for='{{dateArr}}' data-date='{{item.isToday}}' wx:key="key">
+          <view class='date-head'>
+            <view wx:if="{{item.nodaka}}">
+
+              <block wx:if="{{isToday == item.isToday}}">
+                <block wx:if="{{item.datainfo}}">
+                  <view class='dakaend' bindtap='lookdaka' data-arr='{{item.datainfo.content}}'>{{item.dateNum}}</view>
+                </block>
+                <block wx:else>
+                  <view class='nowDay' bindtap='dakaqu'>{{item.dateNum}}</view>
+                </block>
+              </block>
+              <block wx:else>
+                <block wx:if="{{item.bmax}}">
+                  <view class='deb' bindtap='dakaqu'>{{item.dateNum}}</view>
+                </block>
+                <block wx:else>
+                  <view class='deb' bindtap='tishi'>{{item.dateNum}}</view>
+                </block>
+              </block>
+            </view>
+
+            <view wx:elif="{{item.datainfo}}">
+              <view class='dakaend' bindtap='lookdaka' data-arr='{{item.datainfo.content}}'>{{item.dateNum}}</view>
+            </view>
+            <view wx:else>
+              <view class='deb'>{{item.dateNum}}</view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height:50px;'></view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}" style='font-size:16px;width: 200px;margin-left: -100px;'>{{messageContent}}</view>

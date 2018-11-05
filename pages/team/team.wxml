@@ -1,0 +1,39 @@
+<view class="search">
+  <view class="search-result">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+      <view style='width:100vw;'>
+        <swiper class='swiper-box'autoplay="true" interval="5000" duration="2000" style='height:40vh'>
+          <block wx:for="{{movies}}" wx:key="key">
+            <swiper-item>
+              <view>
+                <image class="slide-image" src="{{ item.url }}" bindload='imgHeight' mode='widthFix'></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='' style='width:100vw;margin: auto;'>
+          <view style=' text-align: center;color:#7a7a7a;'>
+            <view style='font-size:28px;color:#585656;'>TEAM</view>
+            <view style='font-size:22px; letter-spacing: 2px;'>国内一流的身高管理团队</view>
+            <view style='font-size:17px; letter-spacing: 2px;'>一对一定制并全程跟踪身高促进</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='box' style='width:100vw'>
+        <view class="result-item" wx:for="{{searchSongList}}" wx:key="key" wx:key="unique" data-data="{{item}}">
+          <image src="{{item.faceimg}}" style='width:48vw;height:48vw;float:left;margin-bottom:1vh;margin-right:1vw;margin-left:1vw;' bindtap="buy" data-id="{{item.id}}"></image>
+        </view>
+
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+  </view>
+
+</view>
+<block wx:if="{{openfenxiao}}">
+  <view class="kefu" bindtap='sharepic'>
+    <image style='width:80rpx;height:80rpx' src="../../image/xiao.jpg"></image>
+  </view>
+</block>

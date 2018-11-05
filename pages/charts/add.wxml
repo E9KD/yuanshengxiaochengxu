@@ -1,0 +1,115 @@
+<view class="page__bd">
+  <view class="mbTxing">
+    <picker name="picker_hx" class="cybm_pic_1" value="{{pic_array[hx_index].id}}" data-selecthx="{{pic_array[hx_index].name}}" range="{{pic_array}}" range-key="{{'name'}}" bindchange="bindPickerChange_hx">
+      <view class="picker-s">
+        {{pic_array[hx_index].name}}
+      </view>
+    </picker>
+  </view>
+  <view class="weui-panel__bd background-white">
+    <view class="weui-media-box-height weui-media-box_text">
+      <view class="weui-cell_primary weui-cell_primary-color-font" style='text-align:center'>@当前数据由世界卫生组织提供</view>
+    </view>
+  </view>
+</view>
+<view class="page__bd">
+  <canvas canvas-id="lineCanvas" class="canvas background-white" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+</view>
+<view style='width: 100%;height:5px;'></view>
+<view class='page__bd'>
+  <view wx:if="{{status == 0}}">
+    <view class="weui-media-box-up weui-media-box_text background-white">
+      <view class="weui-cell_primary" style='text-align:center;padding:0px;margin:0px;'>
+        <view style='font-size:70%;color:#868686;padding:0px;line-height:10px;'>
+          与之前之间相比
+        </view>
+        <view style='font-size:124%;color:#de8a12;padding:0px;'>
+          增长过慢
+        </view>
+        <view style='height:7px;'>
+          <view style='margin:auto;width:2%;border:1px solid #de8a12;'></view>
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          生长过慢，及时排查引起生长过慢的原因,
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          及时干预，科学管理身高。
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{status == 1}}">
+    <view class="weui-media-box-up weui-media-box_text background-white">
+      <view class="weui-cell_primary" style='text-align:center;padding:0px;margin:0px;'>
+        <view style='font-size:70%;color:#868686;padding:0px;line-height:10px;'>
+          与之前之间相比
+        </view>
+        <view style='font-size:124%;color:#de8a12;padding:0px;'>
+          增长平稳
+        </view>
+        <view style='height:7px;'>
+          <view style='margin:auto;width:2%;border:1px solid #de8a12;'></view>
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          结果发育正常，请持续跟踪宝宝数据,
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          检测宝宝发育情况。
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{status == 2}}">
+    <view class="weui-media-box-up weui-media-box_text background-white">
+      <view class="weui-cell_primary" style='text-align:center;padding:0px;margin:0px;'>
+        <view style='font-size:70%;color:#868686;padding:0px;line-height:10px;'>
+          与之前之间相比
+        </view>
+        <view style='font-size:124%;color:#de8a12;padding:0px;'>
+          增长过快
+        </view>
+        <view style='height:7px;'>
+          <view style='margin:auto;width:2%;border:1px solid #de8a12;'></view>
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          生长过快,排查是否出现早发育,骨龄提前等问题,
+        </view>
+        <view style='font-size:80%;color:#868686'>
+          影响最终身高。
+        </view>
+      </view>
+    </view>
+  
+  </view>
+
+  <view wx:elif="{{status == 4}}">
+      <view class="weui-media-box-up weui-media-box_text background-white">
+      <view class="weui-cell_primary" style='text-align:center;padding:0px;margin:0px;'>
+        <view style='font-size:80%;color:#868686'>
+          您好,您的当月身高小于上月身高,请点击添加按钮更新当月身高。
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view style='width: 100%;height:12px;'></view>
+<view class='page__bd' style='margin:auto;'>
+  <view class='kefu' bindtap="powerDrawer" data-statu="open">
+    <image src='../../image/jiahao.png' style='width:36px;height:36px;'></image>
+  </view>
+  <view style='width: 100%;height:15px;'></view>
+  <view class="weui-cell_primary" style='text-align:center;padding:0px;margin:0px;line-height:15px;font-size:70%;color:#868686'>
+    <view>
+      连续添加数据,
+    </view>
+    <view>
+      即可自动生成您或(孩子)的身高生长曲线图,
+    </view>
+    <view>
+      根据曲线图判断您或(孩子)生长情况。
+    </view>
+  </view>
+</view>

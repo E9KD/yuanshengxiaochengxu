@@ -1,0 +1,110 @@
+<view class="IndexHome">
+  <view class="loader8"></view>
+  <view class='draw'>
+    <view class='s'>
+      <view class='sx'>{{fm}}</view>
+      <view class='m'>预计遗传身高(CM)</view>
+    </view>
+  </view>
+</view>
+<view class="div1"></view>
+
+<view class="weui-panel">
+  <view class="weui-panel__hd weui-article_t border-top">{{height[0].title}}{{height[0].msg}}</view>
+  <view class="weui-panel__bd">
+    <!-- </view> -->
+    <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-media-box weui-media-box_text">
+          <!-- // 当前身高， 高于全国平均身高11.7厘米
+        // 当前身高，与理想身高相差42.5cm，通过科学干预，身高将突破遗传，达到180.5cm
+        // 若后天身高管理不善，身高将低于遗传身高，下降至身高下限165.5cm. -->
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black>
+            <block wx:if="{{msg[0].chap == 0}}">
+              当前身高，目前已经达到全国平均身高,
+            </block>
+            <block wx:if="{{msg[0].chap > 0}}">
+              当前身高，高于全国平均身高
+              <black style="color:#DE8A12">{{msg[0].chap}}</black>cm,
+            </block>
+            <block wx:if="{{msg[0].chap < 0}}">
+              当前身高，低于全国平均身高
+              <black style="color:#DE8A12">{{msg[0].chap * -1}}</black>cm,
+            </block>
+          </view>
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black>
+            <block wx:if="{{msg[0].cha == 0}}">
+              当前身高，目前已经达到理想身高,
+            </block>
+            <block wx:if="{{msg[0].cha < 0}}">
+              当前身高，低于理想身高
+              <black style="color:#DE8A12">{{msg[0].cha*-1}}</black>cm,
+            </block>
+            <block wx:if="{{msg[0].cha > 0}}">
+              当前身高，高于理想身高
+              <black style="color:#DE8A12">{{msg[0].cha}}</black>cm,
+            </block>
+            通过科学干预，身高将突破遗传，达到
+            <black style="color:#DE8A12">{{msg[0].gmanheight}}</black>cm!
+          </view>
+          <view class="weui-cell_primary">
+            <black style='color:#F5B607;font-size:14px;'>·</black> 若后天身高管理不善，身高将低于遗传身高，下降至身高下限
+            <black style="color:#DE8A12">{{msg[0].dmanheight}}</black>cm!
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <view class="weui-panel__hd weui-article_t border-top">
+    <view class="weui-media-box_appmsg">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg"></view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">比尔高贴心小建议</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_small-appmsg">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">先天条件</view>
+        <view class="weui-cell_primary">
+          <view wx:if="{{msg[0].cha >= 0}}">
+            恭喜您达到期望身高，遗传是影响身高的部分因素，后天的运动.营养.生活习惯等都会影响你的身高。继续加油！
+          </view>
+          <view wx:else>
+            很遗憾您的遗传身高没有达到期望身高，遗传是影响身高的部分因素，后天的运动.营养.生活习惯等都会影响你的身高。继续加油,早日突破遗传限制！
+          </view>
+        </view>
+      </view>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">医学分析</view>
+        <view class="weui-cell_primary">生长激素，骨骺线，骨龄，微量元素等因素对身高发育起决定性的作用。要准确掌握了解这些因素，达到最佳的增高效果。</view>
+      </view>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">营养水平</view>
+        <view class="weui-cell_primary">食用食材要尽量丰富多样，才能提供长高所需的各种营养。尽量不要挑食，谷薯类，蔬菜类，禽畜类，奶脂类都要摄入。</view>
+      </view>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">运动体态</view>
+        <view class="weui-cell_primary">青少年是体态问题高发人群。体态不良不仅影响形体气质，也会影响体质。进行体态矫正训练，能起到立竿见影的增高效果。</view>
+      </view>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">生活习惯</view>
+        <view class="weui-cell_primary">咖啡，浓茶或碳酸饮料，会阻碍营养素的吸收，影响长高。保持健康饮食习惯，每天饮水2000毫升，让你处于最佳长高状态。</view>
+      </view>
+      <view style='width: 100%;height: 89px;'></view>
+    </view>
+  </view>
+</view>
+<view class="backhome" style="color: #9E9E9E; background-color:#FFF; bottom: 0;border-top:1rpx solid #E5E5E5;text-align:center;">
+  <!-- <view class="menu-item nav-item"> -->
+  <view class='back-t'>
+    立刻开始身高管理
+  </view>
+  <view class='back' bindtap="backHome">
+    GO
+  </view>
+  <!-- </view> -->
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

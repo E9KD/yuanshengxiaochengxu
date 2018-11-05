@@ -1,0 +1,107 @@
+<import src="../../wxParse/wxParse.wxml" />
+<!-- 头部 -->
+<view class='vip-head'>
+  <view class='vip-head-title'>
+    VIP会员专享
+
+    <view style="font-size:12px;margin-top:10px;" wx:if="{{time}}">您的会员将于：{{time}}到期</view>
+
+  </view>
+  <block wx:if="{{isvip == false}}">
+    <view style='display:flex;position:relative;'>
+      <button style='margin-bottom:0px;width:40%;height:40px;line-height:40px;float:left;margin-top:20px;background:#616161;border:none;color:#fff;font-size:20px;position:absolute;bottom:-20px;left:25px;background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));' bindtap="goRegirect">VIP兑换</button>
+      <button plain='true' style='margin-bottom:0px;width:40%;height:40px;line-height:40px;float:left;margin-top:20px;background:#616161;border:none;color:#fff;font-size:20px;position:absolute;bottom:-20px;right:25px;background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));' bindtap="emojiShowHide">VIP查询</button>
+    </view>
+  </block>
+</view>
+<!-- 内容 -->
+<view style='margin:45px auto;'>
+  <view style='display:flex;justify-content:space-around;'>
+
+    <view class='vip-content'>
+      <image src='../../image/vip1.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>定制</view>
+      <view class='vip-text'>身高管理执行方案</view>
+    </view>
+
+    <view class='vip-content'>
+      <image src='../../image/vip2.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>1VS1</view>
+      <view class='vip-text'>身高管理指导</view>
+    </view>
+
+    <view class='vip-content'>
+      <image src='../../image/vip3.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>专业</view>
+      <view class='vip-text'>专家智囊团诊断</view>
+    </view>
+  </view>
+
+  <view style='display:flex;justify-content:space-around;'>
+
+    <view class='vip-content'>
+      <image src='../../image/vip4.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>进阶</view>
+      <view class='vip-text'>在线课程</view>
+    </view>
+
+    <view class='vip-content'>
+      <image src='../../image/vip5.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>专属</view>
+      <view class='vip-text'>身高管理档案</view>
+    </view>
+
+    <view class='vip-content'>
+      <image src='../../image/vip6.jpg' style='width:120rpx;height:120rpx;'></image>
+      <view class='vip-title'>极速</view>
+      <view class='vip-text'>反馈/主动回访</view>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 弹出层 -->
+<view class="cf-bg {{cfBg ? 'kkk' : 'lll'}}" style="z-index:999;display:{{cfBg ? 'block' : 'none'}}">
+  <view class='bg-blur' style='background:#fff'></view>
+  <view class='jz' style='width:100vw;height:1005;'>
+    <view class='jz' style='width:80vw;height:100vh;padding-top:10vh;'>
+      <view style='width:100%;height:80vh;border:1px solid #333;border-radius:5px;position:relative;'>
+        <view style='width:100%;height:28px;'>
+          <view style='width:30px;height:30px;line-height:30px;margin:0 auto;float:right;font-size:16px;text-align:center;' bindtap='cemojiCfBg'>
+            X
+          </view>
+        </view>
+        <!-- 查询 300 1500 -->
+        <!-- 头部三部分 -->
+        <view style='height:50%;'>
+          <view style='text-align:center;margin:0px auto;margin-top:10px;font-size:35px;width:30%;'>查询</view>
+          <view style='font-size:10px;width:100%;margin:0 auto;'>比尔高VIP服务</view>
+          <view style='width:10%;height:3px;margin:3px auto;background:#ee8720;'></view>
+          <!-- 价格 -->
+          <view style='width:75%;margin:20px auto;overflow:hidden;margin-bottom:50px;'>
+            <view class="{{currentTab==0 ? 'on' :'off'}}" data-current="0" bindtap="clickTab" style='border-radius:90%;border:1px solid #ee8720;width:15vh;height:15vh;float:left;text-align:center;margin:20px auto;'>
+              <text class="{{currentTab==0 ? 'on' :'off'}}" data-current="0" bindtap="clickTab" style='border-radius:50%;margin:auto;font-size:30rpx;line-height:15vh;'>{{text1}}</text>
+            </view>
+            <view class="{{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='border-radius:90%;border:1px solid #ee8720;width:15vh;height:15vh;float:right;text-align:center;margin:20px auto;'>
+              <text class="{{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='border-radius:50%;margin:auto;font-size:30rpx;line-height:15vh;'>{{text2}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 底部 -->
+        <view style='width:100%;height:40%;background:#e5e5e5;overflow:hidden;position:absolute;bottom:0;box-sizing:border-box;'>
+          <view class="div1" style='background:#fff;height:25px;'></view>
+          <view style='background:#e5e5e5;'>
+            <view style='font-size:14px;color:#5d5d5d;padding-top:10%;'>------</view>
+            <view style='position:absolute;width:100%;height:30px;margin:0 auto;float:right;font-size:10pt;text-align:center;'>
+              进入客服消息后，发送"1"获取查询链接
+            </view>
+            <button open-type='contact' session-from='{"type": "vip","userid":"{{userinfo.userid}}","unionId":"{{userinfo.unionId}}","goodsid":"1","price":"{{price}}"}' style='width:45%;border:none;color:#fff;background:#f1840f;margin-top:20px;font-size:16px;'>好的</button>
+
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

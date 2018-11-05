@@ -1,0 +1,201 @@
+<view class='container'>
+  <block wx:if="{{dakatypeid == 1}}">
+    <view class="nav">
+      <scroll-view scroll-x="true" class="nav-left">
+        <block wx:for="{{timelist}}" wx:key="key">
+
+          <view style="display: inline-block">
+            <view class='top-time'>{{item.list.time[0]}}</view>
+            <view style="display: inline-block">
+              <block wx:for="{{item.list.time.list}}" wx:key="keys">
+                <view style='text-align:center;display:inline-block;width:100rpx;'>
+                  <block wx:if="{{item.is == 'r'}}">
+                    <view style='width:60%;color:#fff;border:0.5px solid #fff;margin:0 15%;border-radius:20rpx;'>
+                      <view>{{item.weeknum}}</view>
+                      <view>{{item.day}}</view>
+                      <view style='font-size:10px'>今</view>
+                    </view>
+                  </block>
+                  <block wx:elif="{{item.is == 'f'}}">
+                    <block wx:if="{{item.time < nowtime}}">
+                      <view bindtap="checkday" data-day="{{item.time}}" style='width:60%;color:red;margin:0 15%;border-radius:20rpx;'>
+                        <view>{{item.weeknum}}</view>
+                        <view>{{item.day}}</view>
+                        <view style='font-size:10px'>补</view>
+                      </view>
+                    </block>
+                    <block wx:else>
+                      <view style='width:60%;color:#fff;margin:0 15%;border-radius:20rpx;'>
+                        <view>{{item.weeknum}}</view>
+                        <view>{{item.day}}</view>
+                        <view style='font-size:10px'>_</view>
+                      </view>
+                    </block>
+                  </block>
+                  <block wx:else>
+                    <block wx:if="{{item.is == 'n'}}">
+                      <view style='width:60%;color:#fff;border:0.5px solid #fff;margin:0 15%;border-radius:20rpx;'>
+                        <view>{{item.weeknum}}</view>
+                        <view>{{item.day}}</view>
+                        <view style='font-size:10px'>未</view>
+                      </view>
+                    </block>
+                    <block wx:else>
+                      <view style='width:60%;color:#fff;margin:0 15%;border-radius:20rpx;'>
+                        <view>{{item.weeknum}}</view>
+                        <view>{{item.day}}</view>
+                        <view style='font-size:10px'>√</view>
+                      </view>
+                    </block>
+
+                  </block>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='top-head2'>
+      <view class='top-head-title'>距离形成饮食周报告还剩</view>
+      <view class='top-head-day'>
+        <view class='day-num'>{{sday}}</view>
+        <view class='day-day'>天</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+
+    <view class='top-head'>
+      <view class='top-head-title'>距离形成饮食周报告还剩</view>
+      <view class='top-head-day'>
+        <view class='day-num'>{{sday}}</view>
+        <view class='day-day'>天</view>
+      </view>
+    </view>
+  </block>
+
+  <view class='content'>
+    <view class='top-pic'>
+      <image src="../../image/WechatIMG24.png" style='width:200px;height:90px;'></image>
+    </view>
+    <view class='list'>
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>1
+            <image src='../../image/yingyangdaka/1.png' class='img'></image>
+            肉
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="rou"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>2
+            <image src='../../image/yingyangdaka/2.png' class='img'></image>
+            鱼虾
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="yuxia"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>3
+            <image src='../../image/yingyangdaka/3.png' class='img'></image>
+            蛋
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="dan"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>4
+            <image src='../../image/yingyangdaka/4.png' class='img'></image>
+            牛奶
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="niunai"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>5
+            <image src='../../image/yingyangdaka/5.png' class='img'></image>
+            豆类及豆制品
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id='doulei'></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>6
+            <image src='../../image/yingyangdaka/7.png' class='img'></image>
+            蔬菜
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="shucai"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view class='list-one'>
+        <view class='list-one-sex'>
+          <view class='list-tilte'>7
+            <image src='../../image/yingyangdaka/6.png' class='img'></image>
+            水果
+          </view>
+          <view class='list-radio'>
+            <zan-radio items="{{ items }}" bind:change="handleRadioChange" id="shuiguo"></zan-radio>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <block wx:if="{{dakatypeid == 1}}">
+
+    <block wx:if="{{isbuka}}">
+      <view class='bt_v'>
+        <button class='bt' bindtap='buka' data-time="{{bukatime}}">补卡</button>
+      </view>
+    </block>
+    <!-- <block wx:else>
+      <view class="ainmation {{showMessage ? 'hide-in' : ''}}">补卡已完成</view>
+    </block> -->
+  </block>
+  <block wx:else>
+    <view class='bt_v'>
+      <button class='bt' bindtap='daka'>打卡</button>
+    </view>
+  </block>
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" style='z-index:99999' hidden="{{!showMessage}}">{{messageContent}}</view>
+<view class="ainmation {{hidein ? 'hide-in' : ''}}" style='z-index:99999'>补卡已完成</view>

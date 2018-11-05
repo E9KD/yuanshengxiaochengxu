@@ -1,0 +1,89 @@
+<view class="container" disable-scroll='false'>
+  <view class="mine-top">
+    <view class="classname">
+      <image src="{{userlist.userinfo[0].headimgurl}}"></image>
+    </view>
+    <view class="classname">
+      <text>{{userlist.userinfo[0].wxname}}</text>
+    </view>
+
+    <view class="classname">
+      <view style="font-size:12px;margin-top:10px;" wx:if="{{userlist.vipend}}">您的会员将于：{{userlist.vipend}}到期</view>
+    </view>
+  </view>
+
+  <view class="usermotto">
+    <view class="container" disable-scroll='true'>
+
+      <view style='height:10px;'></view>
+      <view class="bbt">
+        <view class="item">
+          <view style='padding:20px'>
+            <view style='color:#4B86F7;font-size:26px'>{{userlist.zcount}}</view>
+            <view style='font-size:10pt'>累计用户</view>
+          </view>
+        </view>
+        <view class="item">
+          <view style='padding:20px'>
+            <view style='color:#4B86F7;font-size:26px'>{{userlist.childs.num[0].num}}</view>
+            <view style='font-size:10pt'>孩子数量</view>
+          </view>
+        </view>
+        <view class="item">
+          <view style='padding:20px'>
+            <view style='color:#4B86F7;font-size:26px'>{{userlist.order[0].num}}</view>
+            <view style='font-size:10pt'>订单数量</view>
+          </view>
+        </view>
+      </view>
+      <view style='height:10px;'></view>
+      <view class="bbt">
+        <view class="item" style='width:50%;'>
+          <view style='padding:20px'>
+            <view style='color:#4B86F7;font-size:26px'>{{userlist.fmheight.fheight}}</view>
+            <view style='font-size:10pt'>父亲身高</view>
+          </view>
+        </view>
+        <view class="item" style='width:50%;'>
+          <view style='padding:20px'>
+            <view style='color:#4B86F7;font-size:26px'>{{userlist.fmheight.mheight}}</view>
+            <view style='font-size:10pt'>母亲身高</view>
+          </view>
+        </view>
+      </view>
+      <view style='height:10px;'></view>
+      <block wx:for="{{userlist.childs.lists}}" wx:key="i">
+        <view class="item2">
+          <view class="navigator-item">
+            <view class="navigator-item">
+              <view class="UserName">
+                <view class="UserPic">
+                  <text class='userTou'>{{item.name}}</text>
+                  <view class='Uico'>
+                    <block wx:if="{{item.sex == 1}}">
+                      <image src="../../image/boy.png" mode="widthFix" class='userIco'></image>
+                    </block>
+                    <block wx:else>
+                      <image src="../../image/gril.png" mode="widthFix" class='userIco'></image>
+                    </block>
+                  </view>
+                </view>
+                <view class="UserDate-a">
+                  年龄：{{item.age}}岁
+                </view>
+              </view>
+              <view class="textCms">期望身高：{{item.qiwangheight}}CM</view>
+              <view class="textCms">目前身高：{{item.infos.nowheight}}CM</view>
+              <view class="textCms">未来身高：{{item.fm.m}}~{{item.fm.f}}CM</view>
+              <view class="datetime">
+                <label class="tm">
+                  <image src="../../image/time.png" class="tmimg"></image>{{item.time}}</label>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

@@ -1,0 +1,40 @@
+<view class="search">
+  <view class="search-result">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+      <view class='box' style='width:100vw;'>
+
+      <block wx:if="{{typename < 5}}">
+        <view class="result-item" wx:for="{{searchSongList}}" wx:key="key" wx:key="unique" data-data="{{item}}">
+          <view class='ju' bindtap="pingfen" data-arr="{{item}}">
+            <view class='head'>
+              <image src="{{userInfo.avatarUrl}}" style='width:100%;height:100%;border-radius:50px;'></image>
+            </view>
+            <view class='time'>
+              {{item.createtime}}
+            </view>
+            <view class='fenshu'>
+              {{item.total}}分
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="result-item" wx:for="{{searchSongList}}" wx:key="key" wx:key="unique" data-data="{{item}}">
+          <view class='ju' bindtap="yszbg" data-arr="{{item}}">
+            <view class='head'>
+              <image src="{{userInfo.avatarUrl}}" style='width:100%;height:100%;border-radius:50px;'></image>
+            </view>
+            <view class='time'>
+              {{item.createtime}}
+            </view>
+            
+          </view>
+        </view>
+      </block>
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+  </view>
+
+</view>

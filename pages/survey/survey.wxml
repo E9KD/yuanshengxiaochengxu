@@ -1,0 +1,109 @@
+<view class='container'>
+  <image class='banner' src='../../image/banner.png'></image>
+  <view class='topText'>
+    <text class='firText' space='nbsp'>家庭情况调查表  </text>
+    <text class='secText'>标*是必填</text>
+  </view>
+  <form bindsubmit="savePersonInfo">
+    
+    <view class='insinfo'>
+      <text class="secText">*</text> 
+      <text class="lar-r">家长姓名</text> 
+        <input type="text" name="username" value="" placeholder='输入姓名' />
+    </view>
+
+    <view class="insinfo"> 
+      <picker  bindchange="changeFheight" mode="selector" range="{{fheightName}}" value="{{provinceDefIndex}}">
+      <text class="secText">*</text> 
+      <text class="lar-r">父亲身高</text>
+          <input disabled='true' type="text" name="fheight" value="{{fheightName[provinceSelIndex2] ? fheightName[provinceSelIndex2] : fmhieght.fheight}}" placeholder='请选择' />
+      </picker>
+    </view>
+
+<view class="insinfo"> 
+       <picker  bindchange="changeMheight" mode="selector" range="{{mheightName}}" value="{{provinceDefIndex}}">
+      <text class="secText">*</text> 
+      <text class="lar-r">母亲身高</text>
+          <input disabled='true' type="text" name="mheight" value="{{mheightName[provinceSelIndex3] ? mheightName[provinceSelIndex3] : fmhieght.mheight}}" placeholder='请选择' />
+      </picker>
+
+    </view>
+
+    <view class='insinfo'>
+      <text class="secText"></text> 
+      <text class="lar-r">其他选项</text> 
+        <input disabled='true' bindtap="othershow" type="text" name="other" value="" placeholder='非必填' />
+    </view>
+
+    <view class="hide{{showView?'show':''}}">
+      <view class='insinfo'>
+      <text class="secText"></text> 
+      <text class="lar-r">父亲职业</text> 
+        <input type="text" name="fjob" value="" placeholder='输入职业' />
+    </view>
+
+    <view class='insinfo'>
+      <text class="secText"></text> 
+      <text class="lar-r">母亲职业</text> 
+        <input type="text" name="mjob" value="" placeholder='输入职业' />
+    </view>
+
+    <view class='insinfo'>
+      <radio-group name='income'>
+      <view class='money'>
+        <text class="secText"></text> 
+        <text class="lar-r">家庭收入(高、中、低)</text>
+        <radio class='radio-group' name='1' value='1' color='#FF9933'><view style="width:70px;">20万元以下</view></radio>
+      </view>
+      <view class='money'>
+        <radio class='radio-group' name='2' value='2' color='#FF9933'><view style="width:70px;">20万--40万</view></radio>
+      </view>
+      <view class='money'>
+        <radio class='radio-group' name='2' value='3' color='#FF9933'><view style="width:70px;">40万元以上</view></radio>
+      </view>
+      </radio-group>
+        
+      
+    </view>
+
+    <view class='insinfo'>
+      <text class="secText"></text> 
+      <text class="lar-r">联系电话</text> 
+        <input type="text" name="tel" value="" placeholder='输入电话' />
+    </view>
+
+    <view class="insinfo"> 
+      <picker bindchange="changeWeight" value="{{weightDefIndex}}" range="{{weightName}}">
+      <text class="secText"></text> 
+      <text class="lar-r">体重(公斤)</text> 
+      <input disabled='true' type='text' name="weight" value='{{weightName[weightSelIndex]}}' placeholder='请选择'></input>  
+      </picker>
+    </view>
+
+    <view class="insinfo"> 
+      <picker bindchange="changeCulture" value="{{cultureDefIndex}}" range="{{cultureName}}">
+      <text class="secText"></text> 
+      <text class="lar-r">文化水平</text> 
+      <input disabled='true' type='text'  name="culture" value='{{cultureName[cultureSelIndex]}}' placeholder='请选择'></input>  
+      </picker>
+    </view>
+
+    <view class='insinfo'>
+      <text class="secText"></text> 
+      <text class="lar-r">您孩子情况(正常足月、早产)</text> 
+      <view style='height:200rpx;'>
+        <radio-group class='radiochild' name='condition'>
+        <radio name='' value='0' color='#FF9933'>足月</radio>
+        <radio name='' value='1' color='#FF9933'>早产</radio>
+       </radio-group>
+      </view>
+        
+    </view>
+    </view>
+
+    <view class='b-tp'>
+     <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">下一步</button>
+    </view>
+  </form>
+  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>
+</view>

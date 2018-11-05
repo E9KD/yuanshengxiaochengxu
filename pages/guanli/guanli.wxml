@@ -1,0 +1,19 @@
+<loading hidden="{{loadingHide}}">
+  {{loadingText}}
+</loading>
+<view class='welcome'>
+  <view class='one'>
+    <view class='title'>欢迎来到</view>
+    <view class='onetext'>比尔高身高管理助手</view>
+    <view class='huanying'>WELCOME</view>
+    <view class='hengxian'></view>
+  </view>
+  <view class='two'>
+    <view class='twotext'>为了更好管理身高</view>
+    <view class='textbottom'>请您认真填写资料</view>
+    <view class='go' bindtap='backadd'>GO</view>
+  </view>
+  <view class='three'>
+    <image src="../../image/biergao.png" style='width:90px;height:40px;margin-top:30%;'></image>
+  </view>
+</view>

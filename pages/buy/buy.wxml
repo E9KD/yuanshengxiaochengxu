@@ -1,0 +1,131 @@
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<block wx:if="{{!show}}">
+
+</block>
+<block wx:else>
+
+  <view class='buyall' style='width:100%; padding-bottom:20px;'>
+    <view class='buy' style='width:100vw'>
+      <view class='head' style='margin-bottom:10px;'>
+
+
+
+        <image src="{{options.fuwuimg}}" mode='widthFix' height="200px" style='background-size:container;height: 40vh;width: 100vw;'></image>
+      </view>
+      <view class='title' style='width:90vw;font-size:25px;color:#888787;height:35px;overflow:hidden;margin-top:30px;margin:auto;'>我能为您提供的服务</view>
+      <!-- 横线 -->
+      <view style='width:100%;height:2px;border-bottom:2px solid #e8e8e8;margin-top:20px;'></view>
+      <!-- 服务 -->
+      <view class='fuwu' style='width:90vw;margin:auto;'>
+
+        <!-- 两种价格查询 -->
+        <view class=''>
+          <view style='font-size:15px;color:#888787;margin-top:10px;'>查询后,您的孩子可以享受:</view>
+          <view style='font-size:15px;color:#888787;margin-top:10px;'>量身定制月度/季度的身高管理服务</view>
+          <!-- <view style='overflow:hidden;margin-top:10px;'>
+            <view style='margin-top:10px;color:#888787;height:25px;line-height:20px;'>
+              /月
+              <view style='float:left;font-size:25px;margin-right:5px;line-height:15px;'>
+                ￥399
+              </view>
+            </view>
+            <view style='margin-top:10px;color:#888787;height:25px;'>
+              /季度
+              <view style='float:left;font-size:25px;margin-right:5px;line-height:15px;'>
+                ￥999
+              </view>
+            </view>
+          </view> -->
+          <view class="service-buy-c">
+            <block wx:if="{{isVip || ispay}}">
+              <button plain='true' style='margin-bottom:0px;width:140px;height:40px;line-height:40px;float:left;margin-top:20px;background:#e47818;border:none;color:#fff;font-size:17px;' open-type='contact' session-from='{"type": "image", "title": "点击开启您的一站式专属身高管理服务之旅吧！", "url": "http://www.biergao.cn/kefu"}'>马上咨询</button>
+            </block>
+            <block wx:else>
+              <button plain='true' style='margin-bottom:0px;width:140px;height:40px;line-height:40px;float:left;margin-top:20px;background:#e47818;border:none;color:#fff;font-size:17px;' bindtap="emojiShowHide">查询</button>
+            </block>
+            <view class="vip-mian">VIP免费</view>
+          </view>
+
+        </view>
+        <!-- 比尔高顾问 -->
+        <view style='font-size: 15px;line-height: 30px;color: #585656;margin-top: 30px;margin-bottom: 20px;'>
+          <view style='overflow:hidden;height:30px;margin-bottom:2px;font-size:18px;color:#888787;'>查询您的专属身高管理服务，获得权限：</view>
+          <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+          <view class="page_gap page_news">
+            <view id="font-adjust">
+              <view class="news_txt" id="newsContent">
+                <block wx:for="{{content}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+                  <block wx:if="{{cellData.type == 'view'}}">
+                    <view class="p">
+                      <block wx:for="{{cellData.child}}" wx:key="text">
+                        <block wx:if="{{item.type == 'a'}}">
+                          <text class="a" data-seccode="{{item.attr['data-seccode']}}" data-secname="{{item.attr['data-secname']}}" bindtap="stockClick">{{item.text}}</text>
+                        </block>
+                        <block wx:else>
+                          <text>{{item.text}}</text>
+                        </block>
+                      </block>
+                    </view>
+                  </block>
+                  <block wx:if="{{cellData.type == 'img'}}">
+                    <image class="img" data-index="{{idy}}" style="height: {{cellData.attr.height?cellData.attr.height:0}}px" mode="aspectFit" src="{{cellData.attr.src}}" bindload="imageLoad"></image>
+                  </block>
+                </block>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 弹出层 -->
+  <view class="cf-bg" style="z-index:999;display:{{cfBg ? 'block' : 'none'}}">
+    <view class='bg-blur' style='background:#fff'></view>
+    <view class='jz' style='width:100vw;height:1005;'>
+      <view class='jz' style='width:80vw;height:100vh;padding-top:10vh;'>
+        <view style='width:100%;height:80vh;border:1px solid #333;border-radius:5px;position:relative;'>
+          <view style='width:100%;height:28px;'>
+            <view style='width:30px;height:30px;line-height:30px;margin:0 auto;float:right;font-size:16px;text-align:center;' bindtap='cemojiCfBg'>
+              X
+            </view>
+          </view>
+          <!-- 查询 300 1500 -->
+          <!-- 头部三部分 -->
+          <view style='height:50%;'>
+            <view style='text-align:center;margin:0px auto;margin-top:10px;font-size:35px;width:30%;'>查询</view>
+            <view style='font-size:13px;width:100%;margin:0 auto;'>1对1专业身高管理服务</view>
+            <view style='width:10%;height:3px;margin:3px auto;background:#ee8720;'></view>
+            <!-- 价格 -->
+            <view style='width:75%;margin:20px auto;overflow:hidden;margin-bottom:50px;'>
+              <view class="{{currentTab==0 ? 'on' :'off'}}" data-current="0" bindtap="clickTab" style='border-radius:90%;border:1px solid #ee8720;width:15vh;height:15vh;float:left;text-align:center;'>
+                <text class="{{currentTab==0 ? 'on' :'off'}}" data-current="0" bindtap="clickTab" style='border-radius:50%;margin:auto;font-size:30rpx;line-height:15vh;'>{{text1}}</text>
+              </view>
+              <view class="{{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='border-radius:90%;border:1px solid #ee8720;width:15vh;height:15vh;float:right;text-align:center;'>
+                <text class="{{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='border-radius:50%;margin:auto;font-size:30rpx;line-height:15vh;'>{{text2}}</text>
+              </view>
+            </view>
+          </view>
+          <!-- 底部 -->
+          <view style='width:100%;height:40%;background:#e5e5e5;overflow:hidden;position:absolute;bottom:0;box-sizing:border-box;'>
+            <view class="div1" style='background:#fff;height:25px;'></view>
+            <view style='background:#e5e5e5;position:absolution;bottom:0px;'>
+              <view style='font-size:14px;color:#5d5d5d;padding-top:10%;'>------</view>
+              <view style='position:absolute;width:100%;height:30px;margin:0 auto;float:right;font-size:10pt;text-align:center;'>
+                进入客服消息后，发送"{{options.id}}"获取查询链接
+              </view>
+              <button open-type='contact' session-from='{"type": "fuwu","userid":"{{userinfo.userid}}","unionId":"{{userinfo.unionId}}","goodsid":"{{options.id}}","price":"{{price}}"}' style='width:45%;border:none;color:#fff;background:#f1840f;margin-top:20px;font-size:16px;'>好的</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{openfenxiao}}">
+  <view class="kefu" bindtap='sharepic'>
+    <image style='width:80rpx;height:80rpx' src="../../image/xiao.jpg"></image>
+  </view>
+</block>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

@@ -1,0 +1,59 @@
+<view class="container" disable-scroll='false'>
+  <view class="mine-top">
+    <view class="classname">
+        <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="classname">
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <!-- <view class="classname">
+      <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain='true' style='line-height:0;border:none;'>
+        <image class='userinfo-avatar' src="../../image/gethead.png" background-size="cover"></image>
+      </button>
+      <block wx:else>
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </block>
+    </view>
+    <view class="classname">
+      <text>{{hasUserInfo ?userInfo.nickName:"点击图片获取头像"}}</text>
+    </view> -->
+    <block wx:if="{{hasUserInfo && canIUse}}">
+      <view class="classname">
+      <view style="font-size:12px;margin-top:10px;" wx:if="{{time}}">您的会员将于：{{time}}到期</view>
+        <!-- <text>身份:大众会员</text>
+        <text wx:if="{{userInfo.point != null}}">积分 {{userInfo.point}}</text>
+        <text wx:else>积分 0</text> -->
+      </view>
+    </block>
+  </view>
+
+  <view class="usermotto">
+    <navigator class="list_a" url='../ulist/ulist?"uid"={{openid}}'>
+      成长报告
+    </navigator>
+    <block wx:if="{{iszhibo}}">
+      <navigator class="list_b" url="../boing/index">
+        开启直播
+      </navigator>
+    </block>
+    <view class="list_b" bindtap='childadd'>
+      添加孩子
+    </view>
+    <navigator class="list_b" url='../order/order?"openid"={{openid}}'>
+      我的订单
+    </navigator>
+    <navigator class="list_b" url="../vip/vip">
+      成为VIP
+    </navigator>
+     <!-- <view class="list_b" bindtap='fenxiao'>
+      推广中心
+    </view>  -->
+    <!-- <navigator class="list_b" url="../about/about">
+      关于我们
+    </navigator> -->
+    <!-- <navigator class="list_b" url="../mobile/mobile">
+      绑定手机
+    </navigator> -->
+  </view>
+</view>
+ <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

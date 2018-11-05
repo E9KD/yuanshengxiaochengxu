@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guanli/guanli",
+    "pages/child/add",
+    "pages/charts/add",
+    "pages/mobile/mobile",
+    "pages/user/user",
+    "pages/ulist/ulist",
+    "pages/insert/add",
+    "pages/ces/add",
+    "pages/add/add",
+    "pages/keceng/index",
+    "pages/zhibo/index",
+    "pages/order/order",
+    "pages/wenjuan/wenjuan",
+    "pages/buy/buy",
+    "pages/team/team",
+    "pages/vip/vip",
+    "pages/vip/setvip",
+    "pages/qzone/qzone",
+    "pages/addComment/addComment",
+    "pages/login/login",
+    "pages/usercount/index",
+    "pages/logs/index",
+    "pages/fenxiao/index",
+    "pages/about/about",
+    "pages/canvas/canvas",
+    "pages/fcanvas/canvas",
+    "pages/survey/survey",
+    "pages/nutrition/nutrition",
+    "pages/shanshi/shanshi",
+    "pages/nutriTarget/nutriTarget",
+    "pages/childsurvey/childsurvey",
+    "pages/userinfo/userinfo",
+    "pages/userifnomsg/userifnomsg",
+    "pages/newsDetail/newsDetail",
+    "pages/yingyanglist/yingyanglist",
+    "pages/ydaka/ydaka",
+    "pages/yszbg/yszbg"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "比尔高",
+    "navigationBarBackgroundColor": "#004299",
+    "backgroundColor": "#EEEEEE",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#ec881d",
+    "backgroundColor": "black",
+    "color": "#FFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/a1.png",
+        "selectedIconPath": "image/a2.png"
+      },
+      {
+        "pagePath": "pages/team/team",
+        "text": "服务",
+        "iconPath": "image/a3.png",
+        "selectedIconPath": "image/a4.png"
+      },
+      {
+        "pagePath": "pages/keceng/index",
+        "text": "课程",
+        "iconPath": "image/a7.png",
+        "selectedIconPath": "image/a8.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "image/a9.png",
+        "selectedIconPath": "image/a10.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

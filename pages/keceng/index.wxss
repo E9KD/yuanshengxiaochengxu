@@ -1,0 +1,240 @@
+page {
+  line-height: 1;
+  font-weight: 100;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+/* 课程分类开始 */
+
+.coursetop {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* 课程分类的上两行文字 */
+
+/* .text {
+  text-align: center;
+} */
+
+/* CLASS */
+
+/* .text .title  {
+ font-size: 35rpx;
+ margin-top: 50px;
+ color: #595757;
+} */
+
+/* 课程分类四个字 */
+
+/* .text .classify {
+  font-size: 26rpx;
+} */
+
+/* 六个部分 */
+
+.courseicon {
+  display: block;
+  width: 16.6%;
+  height: 80px;
+  float: left;
+  margin-top: 8px;
+}
+
+/* 第一个ALL */
+
+.courseicon .ALL {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1rpx solid #ec881d;
+  text-align: center;
+  line-height: 40px;
+  color: #ec881d;
+  font-size: 70%;
+  margin: 0 auto;
+}
+
+/* 圆形图片 */
+
+.courseicon image {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 90%;
+  border: 1rpx solid #ec881d;
+  margin: 0 auto;
+}
+
+/* 圆形图片文字 */
+
+.courseicon .icontext {
+  display: block;
+  text-align: center;
+  font-size:15px;
+  margin-top: 10px;
+}
+
+/* 段落开始 */
+
+/* 段落部分的两边空白 */
+
+.course-content {
+  padding: 0 15px;
+  /* overflow: hidden; */
+}
+
+/* 课程类型+俩按钮 */
+
+.course-content-top {
+  overflow: hidden;
+}
+
+/* 课程类型 */
+
+.course-mold {
+  display:block;
+float:left;
+height:30px;
+margin-top:15px;
+border:none;
+font-size:15px;
+line-height: 30px;
+}
+
+/* 按钮 */
+
+.course-btn {
+  margin-top:15px;
+  border: none;
+  line-height: 30px;
+  text-align: center;
+  font-size:15px;
+}
+
+/* 收费按钮 */
+
+.course-btn .free {
+  width: 50px;
+  color: #000;
+  float: right;
+  /* border: 1px solid #ec881d; */
+}
+
+/* 免费按钮 */
+
+.course-btn .all {
+  width: 50px;
+  float: right;
+  color: #000;
+  /* border: 1px solid #ec881d; */
+}
+
+/* 全部按钮 */
+
+.course-btn .charge {
+  width: 50px;
+  float: right;
+  color: #000;
+  /* border: 1px solid #ec881d; */
+}
+
+.bth {
+
+
+  /* background: #ec881d; */
+  border-bottom: 1px solid #ec881d;
+}
+
+/* 下边整体文字段落 */
+.course-content-bottom {
+  height: 100%;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* 文章图片 左边 */
+
+.course-content-content-left image {
+  display: block;
+  width: 120px;
+  height: 75px;
+}
+
+/* 文字部分 */
+
+.course-content-bottom-right {
+  /* justify-content: flex-start; */
+  width: 100%;
+  /* height:77px; */
+}
+
+/* 右边文字标题 */
+
+.course-content-bottom-right .title {
+  height: 16px;
+  line-height: 16px;
+  /* font-weight: bold; */
+  overflow: hidden;
+  padding-left: 12px;
+  margin-bottom: 3px;
+}
+
+/* 右边文字正文 */
+.test {
+
+  
+  /* line-height: 14px; */
+  font-size: 12px;
+  overflow: hidden;
+  padding-left: 12px;
+  padding-bottom: 0rpx;
+  margin-top: 5px;
+  color: #a6a6a6;
+  height: 42px;
+}
+
+/* time+price */
+
+.course-content-bottom-right .kfooter {
+  width: calc(100% - 12px);
+  font-size: 13px;
+  height: 13px;
+  line-height: 13px;
+  padding-left: 12px;
+}
+
+/* time */
+
+.course-content-bottom-right .time {
+  width: 40%;
+  float: left;
+  text-align: left;
+  color: #a6a6a6;
+}
+
+/* price*/
+
+.course-content-bottom-right .price {
+  width: 60%;
+  float: right;
+  color: red;
+  text-align: right;
+  
+}
+.kefu {
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

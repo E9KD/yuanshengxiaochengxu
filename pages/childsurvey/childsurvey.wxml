@@ -1,0 +1,143 @@
+<view class='container'>
+  <image class='banner' src='../../image/banner.png'></image>
+  <view class='topText'>
+    <text class='firText' space='nbsp'>家庭情况调查表  </text>
+    <text class='secText'>标*是必填</text>
+  </view>
+  <form bindsubmit="savePersonInfo">
+
+    <view class='insinfo'>
+      <picker value="{{childlists[hx_index]}}" data-lc="{{childlists[hx_index].localheight}}" data-selecthx="{{childlists[hx_index].name}}" range="{{childlists}}" range-key="{{'name'}}" bindchange="bindPickerChange_hx">
+      <text class="secText">*</text>
+      <text class="lar-r">儿童姓名</text>
+        <input type="text" disabled='true' name="childname" placeholder='请选择' value='{{childlists[hx_index].name}}'></input>
+      </picker>
+    </view>
+
+    <view class="insinfo">
+      <!-- <picker bindchange="bindSexChange" value="{{sex[sexIndex]}}" range="{{sex}}"> -->
+        <text class="secText">*</text>
+        <text class="lar-r">性别</text>
+        <input disabled='true' type='text' name="sex" value='{{sex[childlists[hx_index].sex]}}' placeholder='请选择'>{{sex[sexIndex]}}</input>
+      <!-- </picker> -->
+    </view>
+
+    <view class="insinfo">
+      <!-- <picker bindchange="bindBirthdayChange" value="{{birthday}}" range="{{array}}" mode='date'> -->
+        <text class="secText">*</text>
+        <text class="lar-r">出生年月日</text>
+        <input disabled='true' type='text' name="birthtime" value='{{childlists[hx_index].brithdaydel}}' placeholder='请选择'></input>
+      <!-- </picker> -->
+    </view>
+
+    <view class="insinfo">
+      <picker bindchange="changeRegin" mode="region" value="{{region}}" range="{{region}}">
+        <text class="secText">*</text>
+        <text class="lar-r">出生地</text>
+        <input disabled='true' type='text' name="birthdayplace" value='{{region[0]}} - {{region[1]}} - {{region[2]}}' placeholder='请选择'></input>
+      </picker>
+    </view>
+
+    <view class="insinfo">
+      <picker bindchange="changeheight" value="{{heightDefIndex}}" range="{{heightName}}">
+        <text class="secText">*</text>
+        <text class="lar-r">最近一个月测量身高</text>
+        <input disabled='true' type='text' name="localheight" value="{{localheight?childlists[hx_index].localheight:heightName[heightSelIndex]}}" placeholder='请选择'></input>
+      </picker>
+    </view>
+
+    <view class="insinfo">
+      <picker bindchange="changeWeight" value="{{weightDefIndex}}" range="{{weightName}}">
+        <text class="secText">*</text>
+        <text class="lar-r">最近一个月测量体重</text>
+        <input disabled='true' type='text' name="localweight" value='{{weightName[weightSelIndex]}}' placeholder='请选择'></input>
+      </picker>
+    </view>
+
+    <view class='insinfo'>
+      <text class="secText"></text>
+      <text class="lar-r">其他选项</text>
+      <input disabled='true' bindtap='othershow' type="text" name="other" value="" placeholder='非必填' />
+    </view>
+
+    <view class="hide{{showView?'show':''}}">
+      <view class='insinfo'>
+        <text class="secText"></text>
+        <text class="lar-r">家庭住址</text>
+        <input type="text" name="address" value="" placeholder='请填写' />
+      </view>
+
+      <view class='insinfo'>
+        <radio-group name="ismenses">
+          <view class='money'>
+            <text class="secText"></text>
+            <text class="lar-r">女生是否来月经</text>
+            <radio bindtap='isyuejing' class='radio-group' name='1' value='' color='#FF9933'>是</radio>
+          </view>
+          <view class='money'>
+            <radio bindtap='noyuejing' class='radio-group' name='2' value='' color='#FF9933'>否</radio>
+          </view>
+        </radio-group>
+
+
+      </view>
+
+      <view class='{{yj?"insinfo":"hide"}}'>
+        <text class="secText"></text>
+        <text class="lar-r">初次来月经的年龄</text>
+        <input type="text" name="mensesage" value="" placeholder='请填写' />
+      </view>
+
+      <view class='insinfo'>
+        <radio-group name="isinherited">
+          <view class='money'>
+            <text class="secText"></text>
+            <text class="lar-r">是否患有遗传性疾病</text>
+            <radio bindtap='isyichuan' class='radio-group' name='1' value='1' color='#FF9933'>是</radio>
+          </view>
+          <view class='money'>
+            <radio bindtap='noyichuan' class='radio-group' name='2' value='0' color='#FF9933'>否</radio>
+          </view>
+        </radio-group>
+
+
+      </view>
+
+      <view class='{{yc?"insinfo":"hide"}}'>
+        <text class="secText"></text>
+        <text class="lar-r">若有,请说明是何疾病</text>
+        <input type="text" name="inheritedname" value="" placeholder='请填写' />
+      </view>
+
+      <view class='insinfo'>
+        <radio-group name="ischronic">
+          <view class='money'>
+            <text class="secText"></text>
+            <text class="lar-r">是否患有慢性疾病</text>
+            <radio bindtap='ismanxing' class='radio-group' name='1' value='1' color='#FF9933'>是</radio>
+          </view>
+          <view class='money'>
+            <radio bindtap='nomanxing' class='radio-group' name='2' value='0' color='#FF9933'>否</radio>
+          </view>
+        </radio-group>
+
+
+      </view>
+
+      <view class='{{mx?"insinfo":"hide"}}'>
+        <text class="secText"></text>
+        <text class="lar-r">若有,请说明是何疾病</text>
+        <input type="text" name="chronicname" value="" placeholder='请填写' />
+      </view>
+
+
+
+
+    </view>
+
+    <view class='b-tp'>
+      <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">下一步</button>
+    </view>
+  </form>
+  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>
+</view>

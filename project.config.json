@@ -1,0 +1,444 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.3",
+	"appid": "wx41e93e31c9d4dc26",
+	"projectname": "%E5%8E%9F%E7%94%9F%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 61,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/mobile/mobile",
+					"pathName": "pages/mobile/mobile",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/qzone/qzone",
+					"pathName": "pages/qzone/qzone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/usercount/index",
+					"pathName": "pages/usercount/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/usercount/index",
+					"pathName": "pages/ulist/ulist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ces/add",
+					"pathName": "pages/ces/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/wenjuan/wenjuan",
+					"pathName": "pages/wenjuan/wenjuan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/logs/index",
+					"pathName": "pages/logs/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/fenxiao/index",
+					"pathName": "pages/fenxiao/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/qzone/qzone",
+					"pathName": "pages/qzone/qzone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/keceng/index",
+					"pathName": "pages/keceng/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/keceng/index",
+					"pathName": "pages/keceng/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/fenxiao/index",
+					"pathName": "pages/fenxiao/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "sid=7"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene='sid=7'",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=sid=7",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene='1&sid=7&pid=6'",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1&sid=7&pid=6",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=7&pid=6",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=`index&sid=7&pid=6`",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=7&pid=6",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=share&sid=7",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=share&sid=8",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=8",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/keceng/index",
+					"query": "",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "sid=8",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene='index&sid=8'",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene='index#sid=8'",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index#sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1#8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=int#sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=int#8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=int&8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index#sid=8&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index$8&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=index&8&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=01&8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=01#8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=id=10#sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=id=10&sid=8",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pages/add/add",
+					"pathName": "pages/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/shanshi/shanshi",
+					"pathName": "pages/shanshi/shanshi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/nutrition/nutrition",
+					"pathName": "pages/nutrition/nutrition",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/nutriTarget/nutriTarget",
+					"pathName": "pages/nutriTarget/nutriTarget",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ydaka/ydaka",
+					"pathName": "pages/ydaka/ydaka",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ydaka/ydaka",
+					"pathName": "pages/ydaka/ydaka",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ydaka/ydaka",
+					"pathName": "pages/ydaka/ydaka",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ydaka/ydaka",
+					"pathName": "pages/ydaka/ydaka",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ydaka/ydaka",
+					"pathName": "pages/yszbg/yszbg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/yszbg/yszbg",
+					"pathName": "pages/yszbg/yszbg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/shanshi/shanshi",
+					"pathName": "pages/shanshi/shanshi"
+				}
+			]
+		}
+	}
+}

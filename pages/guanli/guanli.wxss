@@ -1,0 +1,89 @@
+page {
+  background-color: #004299;
+  height: 100%;
+  overflow: hidden;
+}
+.welcome {
+  height:100%;
+width: 100%;
+overflow: hidden;
+color: #dde4ef;
+text-align: center;
+}
+.one .title {
+margin-top: 30%;
+font-size: 30rpx;
+}
+.onetext {
+margin-top: -2.5%;
+font-size:60rpx;
+}
+.one .huanying {
+margin-top: -2.5%;
+color: #5d7eb6;
+font-size:55rpx;
+}
+.one .hengxian {
+display: block;
+margin: auto;
+margin-top:0.5%; 
+text-align: center;
+height: 5rpx;
+width: 20%;
+background:yellow;
+}
+.two {
+margin-top: 12%;
+}
+.twotext{
+  margin-top: 0.5%;
+  font-size:30rpx;
+}
+.two .textbottom {
+  margin-bottom: 10%;
+  font-size:30rpx;
+}
+.two .go{
+display: block;
+border-radius: 90%;
+width: 90rpx;
+height: 90rpx;
+background: #d28e36;
+text-align: center;
+line-height: 90rpx;
+margin: auto;
+font-size: 30rpx;
+}
+/* .container {
+  width: 100%;
+  height: 100%;
+}
+
+.IndexHome {
+  width: 100%;
+  display: block;
+  background-color: #004299;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.kefu {
+  color: #fff;
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1rpx solid #de8a12;
+  background: #de8a12;
+  border-radius: 50%;
+} */

@@ -1,0 +1,944 @@
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 总体 */
+
+.content {
+  width: 100vw;
+  overflow: hidden;
+  background: #f3f2f8;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+}
+
+/* 四分之一 */
+
+.content-one {
+  background: #fff;
+  width: 46%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 标题 */
+
+.content .content-title {
+  font-size: 40rpx;
+  position: absolute;
+  left: 26%;
+  top: 45%;
+  width: 180rpx;
+}
+
+/* 预测*/
+
+.content .content-text {
+  width: 182rpx;
+  font-size: 17rpx;
+  position: absolute;
+  left: 25%;
+  top: 65%;
+}
+
+/* 英文生长曲线 */
+
+.content .content-text-grp {
+  width: 185rpx;
+  font-size: 19rpx;
+  position: absolute;
+  left: 25%;
+  top: 65%;
+  /* word-spacing: 3px; */
+}
+
+/* 打卡部分 */
+
+.content .content-text-btm-right {
+  width: 185rpx;
+  font-size: 19rpx;
+  position: absolute;
+  left: 25%;
+  top: 84%;
+  /* word-spacing: 5px; */
+}
+
+/* 一对一 */
+
+.content .content-text-btm-left {
+  width: 193rpx;
+  font-size: 17rpx;
+  position: absolute;
+  left: 25%;
+  top: 84%;
+}
+
+/* 方块图片 */
+
+.content-one image {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 43.5%;
+  top: 20%;
+}
+
+.jz {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 5em;
+  margin: auto 0;
+  /* background: silver; */
+}
+
+.a1 {
+  text-align: justify;
+  width: 100%;
+  height: 0;
+  display: inline-block;
+  text-align-last: justify;
+  vertical-align: top;
+}
+
+.a1:after {
+  display: inline-block;
+  content: '';
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+}
+
+.a2 {
+  font-size: 42%;
+  text-align: justify;
+  width: 100%;
+  height: 0;
+  display: inline-block;
+  text-align-last: justify;
+  vertical-align: top;
+  line-height: 15px;
+}
+
+.a2:after {
+  display: inline-block;
+  content: '';
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  font-size: 42%;
+}
+
+.content-top {
+  margin-top: 20px;
+}
+
+/* 内圆 */
+
+.yuan .neiyuan {
+  margin: 0 auto;
+  border-radius: 90%;
+  background: #ec881d;
+  /* width: 230rpx;
+  height: 230rpx; */
+  text-align: center;
+  color: #fff;
+}
+
+/* 内圆标题 */
+
+.neiyuan-tit {
+  position: absolute;
+  top: 28%;
+  left: 11%;
+  font-size: 45rpx;
+}
+
+/* 内圆文字 */
+
+.neiyuan-txt {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 27rpx;
+}
+
+.IndexHome {
+  width: 100%;
+  display: block;
+  background-color: #004299;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.img {
+  width: 90%;
+  height: 100%;
+}
+
+.kefu {
+  font-size: 22rpx;
+  color: #fff;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 44%;
+  bottom: 35%;
+  border: 1px solid #de8a12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #de8a12;
+  border-radius: 50%;
+}
+
+.common-title {
+  background: #fff;
+  width: 100%;
+  padding-top: 20px;
+  /* height: 270rpx; */
+}
+
+.common-title-big {
+  font-size: 38px;
+  color: #595757;
+  margin-top: 5px;
+  line-height: 1;
+}
+
+.common-title-text {
+  font-size: 23px;
+  line-height: 30px;
+  margin: 0;
+  color: #595757;
+}
+
+.common-title-subtext {
+  font-size: 18px;
+  line-height: 19px;
+  margin-bottom: 5px;
+  margin: 0;
+}
+
+.right_now {
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background: #ec881d;
+  font-size: 14px;
+  color: white;
+  max-width: 230rpx;
+  padding: 2px;
+  margin-bottom: 15px;
+}
+
+.system {
+  width: 100%;
+  height: auto;
+}
+
+.sys-text1 {
+  width: 100%;
+  top: 30%;
+  font-size: 26px;
+  color: #595757;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.sys-text2 {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  font-size: 13px;
+  color: #595757;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.text3 {
+  width: 100%;
+  top: 50%;
+  font-size: 26px;
+  color: #595757;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+/* process 开始 */
+
+.process {
+  background: #f6f6f6;
+  padding: 10rpx 0 10rpx 0;
+  width: 100%;
+  height: auto;
+}
+
+.zd-t {
+  background: #f6f6f6;
+  width: 100%;
+  height: 22.79%;
+}
+
+.zd {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+.zd-2 {
+  width: 50%;
+  height: 100px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.zd-2 .img {
+  width: 43.6%;
+  height: 100px;
+}
+
+.zd-left {
+  float: left;
+}
+
+.zd-right {
+  float: right;
+}
+
+.zd-common-title-big {
+  margin-top: 15%;
+}
+
+.zd .zd-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10%;
+}
+
+.box {
+  text-align: center;
+  float: right;
+  width: 56.4%;
+  height: 100px;
+  background: #ec881d;
+}
+
+.warp {
+  height: 156px;
+  position: relative;
+}
+
+.warp image {
+  width: 100%;
+  height: 100%;
+}
+
+.warp view {
+  width: 200px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  position: absolute;
+  margin-left: -100px;
+}
+
+.view1 {
+  top: 2%;
+  left: 50%;
+}
+
+.view2 {
+  top: 15%;
+  left: 50%;
+  font-size: 13px;
+}
+
+.warp .manage-go {
+  position: absolute;
+  border: 1px solid #ec881d;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #ec881d;
+  text-align: center;
+  line-height: 30px;
+  margin: 10px auto 0;
+  font-weight: 600;
+  font-size: 10px;
+  top: 26%;
+  left: 50%;
+  color: #fff;
+  margin-left: -15px;
+}
+
+.manage-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/**index.wxss**/
+
+.circle-out {
+  margin: 20px auto;
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+  border-radius: 50%;
+  /* background-color: #415cab; */
+  overflow: hidden;
+}
+
+.userinfo-avatar {
+  width: 80vw;
+  height: 80vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 0.1rpx solid #c8c6c8;
+}
+
+.userinfo-avatar2 {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* background: #fff */
+  border: 0.1rpx solid #c8c6c8;
+}
+
+.userinfo-avatar3 {
+  width: 48vw;
+  height: 48vw;
+  border: 0.1rpx solid #c8c6c8;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* background: red; */
+  z-index: 800;
+}
+
+/**子控件的透明度等于父控件透明度*子控件透明度,父控件的opacity设置后,
+所以子控件opacity设置为1依然无效,必须分离开
+*/
+
+.circle-in {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+}
+
+/**菜单*/
+
+.menu-list {
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+}
+
+.menu-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+}
+
+.menu-circle-item {
+  -webkit-transform-origin: 50% 48vw;
+  transform-origin: 50% 48vw;
+  margin: 0 auto;
+  margin-top: 2vw;
+  position: relative;
+  height: 16vw;
+  width: 16vw;
+  background-color: #ec881d;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 999;
+  border: 5px solid #f3f2f8;
+  line-height: 16vw;
+  box-shadow: 0 0 3vw 0 #999;
+}
+
+.image-style {
+  height: 16vw;
+  width: 16vw;
+  color: #f00;
+  z-index: 999;
+}
+
+.rotate1 {
+  -webkit-transform: rotate(-75deg);
+}
+
+.rotate2 {
+  -webkit-transform: rotate(200deg);
+}
+
+.rotate3 {
+  -webkit-transform: rotate(130deg);
+}
+
+.rotate4 {
+  -webkit-transform: rotate(70deg);
+}
+
+.text-style {
+  position: absolute;
+  font-size: 11px;
+  top: 4vw;
+  left: 18vw;
+  width: 50px;
+}
+
+/***/
+
+.menu-circle-text-item {
+  -webkit-transform-origin: 50% 41vw;
+  transform-origin: 50% 41vw;
+  margin: 0 auto;
+  position: relative;
+  height: 25px;
+  width: auto;
+  text-align: center;
+  margin-top: -14vw;
+}
+
+.circle-in .dian0 {
+  position: absolute;
+  left: 73%;
+  top: 5.5%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.circle-in .dian1 {
+  position: absolute;
+  left: 79.5vw;
+  top: 28vh;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.circle-in .dian2 {
+  position: absolute;
+  left: 43vw;
+  top: 43.5vh;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.circle-in .dian3 {
+  position: absolute;
+  left: 7.5vw;
+  top: 10vh;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.circle-in .dian4 {
+  position: absolute;
+  left: 4.5vw;
+  top: 40vh;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.circle-in .font0 {
+  position: absolute;
+  left: 56vw;
+  top: -1vh;
+  font-size: 10px;
+}
+
+.circle-in .font1 {
+  position: absolute;
+  left: 82vw;
+  top: 29vh;
+  font-size: 10px;
+  width: 20px;
+}
+
+.circle-in .font2 {
+  position: absolute;
+  left: 40vw;
+  top: 46vh;
+  font-size: 10px;
+}
+
+.circle-in .font3 {
+  position: absolute;
+  left: 12vw;
+  top: 9vh;
+  font-size: 10px;
+}
+
+.circle-in .font4 {
+  position: absolute;
+  left: 6vw;
+  top: 37vh;
+  font-size: 10px;
+}
+
+/* 弹出框 */
+
+.x {
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+  float: right;
+  border-radius: 50%;
+  border: 0.5px solid #fff;
+  margin: 10px;
+}
+
+.bt-l {
+  border-radius: 50px;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  margin: 0 auto;
+  float: left;
+  width:45%;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+.bt-center{
+  border-radius:50px;
+background:linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+margin:0 auto;
+height:30px;
+line-height:30px;
+color:#fff;
+width:100px;
+
+}
+
+.bt-r {
+  border-radius: 50px;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  margin: 0 auto;
+  float: right;
+  width:45%;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+
+.text {
+  color: #fff;
+  padding-right: 3vw;
+}
+
+.text1 {
+  color: #666;
+  padding-right: 3vw;
+}
+
+.text_center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.icon {
+  float: left;
+  width: 8vh;
+  height: 8vh;
+}
+
+.cf-bg {
+  font-weight: 200;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: Consolas, Monaco, monospace;
+  overflow: hidden;
+}
+
+.jz2 {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  font-size: 26px;
+  color: #595757;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  min-height: 300px;
+}
+
+.bt2 {
+  width: 60vw;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 auto;
+  float: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.headr2bu {
+  width: 280px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #fff;
+}
+.jinxu {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 14px;
+  width: 72px;
+}
+
+.x2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  color: #999;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+.x3 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  color: #999;
+  line-height: 15px;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.headr2bu2 {
+  width: 280px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.buzhou {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 14px;
+  float: left;
+  width: 50px;
+}
+
+.do {
+  float: right;
+  line-height: 14px;
+  width: 180px;
+}
+
+.buzhou2 {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 20px;
+  float: left;
+  width: 50px;
+}
+
+/* 太极图 */
+
+/*左半部分1号*/
+
+.left {
+  width: 24vw;
+  height: 48vw;
+  border-radius: 200px 0 0 200px;
+  float: left;
+  background-color: #fff;
+}
+
+/*右半部分2号*/
+
+.right {
+  width: 24vw;
+  height: 48vw;
+  border-radius: 0 200px 200px 0;
+  background-color: #ec881d;
+  float: left;
+}
+
+#taiji {
+  margin: auto;
+  width: 48vw;
+  height: 48vw;
+  box-shadow: 0 0 5vw 0 #999;
+  border-radius: 100%;
+}
+
+.left_one {
+  margin-left: 12vw;
+  background-color: #fff;
+  width: 24vw;
+  height: 24vw;
+  border-radius: 100%;
+  position: relative;
+}
+
+.right_one {
+  margin-left: 12vw;
+  background-color: #ec881d;
+  width: 24vw;
+  height: 24vw;
+  border-radius: 100%;
+  position: relative;
+}
+
+.yindaka {
+  position: absolute;
+  content: " ";
+  width: 24vw;
+  height: 24vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  z-index: 999;
+  background-color: #fff;
+  font-size: 100%;
+}
+
+.yangpingce {
+  position: absolute;
+  content: " ";
+  width: 24vw;
+  height: 24vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  z-index: 999;
+  background-color: #ec881d;
+  font-size: 100%;
+}
+
+.font-daka {
+  position: absolute;
+  content: " ";
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 30%;
+  line-height: 8vw;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 999;
+  background-color: #ec881d;
+  font-size: 18pt;
+}
+
+.font-ping {
+  position: absolute;
+  content: " ";
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 70%;
+  line-height: 8vw;
+  transform: translate(-50%, -50%);
+  color: #ec881d;
+  z-index: 999;
+  background-color: #fff;
+  font-size: 18pt;
+}
+
+.da {
+  position: absolute;
+  content: " ";
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 30%;
+  line-height: 8vw;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 999;
+  font-size: 18pt;
+}
+
+.jia {
+  position: absolute;
+  content: " ";
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+  text-align: center;
+  left: 50%;
+  top: 70%;
+  line-height: 8vw;
+  transform: translate(-50%, -50%);
+  color: #ec881d;
+  z-index: 999;
+  font-size: 18pt;
+}

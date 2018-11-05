@@ -1,0 +1,191 @@
+page {
+  width: 100%;
+  background: #e6e6e6;
+}
+.head{
+  margin:0px;
+  padding:0px;
+  border-bottom:5px solid #484848; 
+}
+.head image{
+  width:100%;
+  height:100%;
+}
+
+canvas {
+  position: fixed;
+  z-index: 1;
+}
+
+/*  重写 checkbox 样式  */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background: red;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/* 表单部分 */
+
+.content {
+  margin: auto;
+  border-width: 100%;
+  height: 720px;
+}
+
+.weui-media-box__title {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+/* 年龄性别 */
+
+.top_ipt input {
+  width: 138px;
+  float: left;
+  font-size: 30rpx;
+  background: #fff;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.content-one {
+  border-bottom: 1px solid #595757;
+  height: 199px;
+}
+
+.content-one:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.content-one view {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.content-one label {
+  width: 125px;
+  height: 22px;
+  float: left;
+  color: #595757;
+  font-size: 17px;
+}
+
+.content-one input {
+  width: 140px;
+  height: 22.3px;
+  font-size:15px;
+  padding-left:5px;
+  float: right;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* 底部 */
+
+.sharefooter {
+  background: #057c2c;
+  color: #fff;
+  text-align: center;
+  border-top: 5px solid #484848;
+  margin-top: -1px;
+  padding-top: 30px;
+}
+
+.footer-title {
+  font-size: 15px;
+  /* margin-top: 15px; */
+}
+
+.footer-text {
+  font-size: 22px;
+}
+
+/*弹出层  */
+
+.cf-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+/*jz  */
+
+.jz {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.jz button[plain] {
+  color: #353535;
+  border: 1px solid #353535;
+  background-color: transparent;
+  line-height: 1.5;
+  width: 49%;
+  float: left;
+  display: inline;
+}
+
+.nav {
+  width: 49%;
+  border: 1px solid #353535;
+  float: right;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #000;
+  background-color: transparent;
+}
+
+.bg-blur {
+  position:fixed;
+  float: left;
+  width: 100%;
+  height:100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px); */
+}

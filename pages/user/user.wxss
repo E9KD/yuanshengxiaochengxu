@@ -1,0 +1,36 @@
+page{
+  font-size: 30rpx;
+}
+.usermotto {
+  width: 92%;
+  background: #fff;
+  border-bottom: 2rpx #f1f1f1 solid;
+  padding: 0 4%;
+}
+.list_a {
+  width: 100%;
+  padding: 30rpx 0;
+}
+
+.list_b {
+  border-top: 2rpx #f1f1f1 solid;
+  padding: 30rpx 0;
+}
+
+.kefu {
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 120rpx;
+  border: 1px solid #ba77ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ba77ff;
+  border-radius: 50%;
+}
+
+.menu-item {
+  width: 50%;
+}

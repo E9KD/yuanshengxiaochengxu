@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<import src="../common/foot.wxml" />
+<view class="authorize-contianer">
+  <image class="authorize-icon" src="../../image/authorize.png" />
+  <view class="auth-item">比尔高申请获取以下权限：</view>
+  <view class="auth-item">获取你的公开信息（头像、昵称等）</view>
+  <view class="btn-authorize">
+    <block wx:if="{{!hasUserInfo}}">
+      <button open-type="getUserInfo" type="primary" lang="zh_CN" bindgetuserinfo="getUserInfo" loading="{{loading}}">授权使用</button>
+    </block>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hidden='{{finduser}}'>授权您的用户信息给小程序</button>
+  </view>
+  <template is="foot" />
+</view>
+
+
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}" style='font-size:16px;width: 200px;margin-left: -100px;'>{{messageContent}}</view>

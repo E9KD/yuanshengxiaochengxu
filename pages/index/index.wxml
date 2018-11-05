@@ -1,0 +1,342 @@
+<view style="display:{{cfBg ? 'none' : 'block'}}">
+  <swiper class='swiper-box' autoplay="true" interval="5000" duration="2000" style='height:40vh'>
+    <block wx:for="{{movies}}" wx:key="key">
+      <swiper-item>
+        <view>
+          <image class="slide-image" src="{{ item.url }}" mode='widthFix'></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 四块 -->
+  <view class="content" style='height:60vh'>
+    <view style='width:98vw;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);'>
+      <view class='content-one' style='height:27vh;float:left;margin-left:10px;' bindtap='heightguanli2'>
+        <image src='../../image/icon1.png'></image>
+        <view class='content-title'>
+          <view class='jz'>
+            <view class='a1'>身高预测</view>
+            <view class='a2'>HEIGHT PREDICTION</view>
+          </view>
+        </view>
+      </view>
+      <view class='content-one' style='height:27vh;float:right;margin-right:10px;' bindtap='heightguanli'>
+        <image src='../../image/icon2.png'></image>
+        <view class='content-title'>
+          <view class='jz'>
+            <view class='a1'>生长曲线</view>
+            <view class='a2'>GROWTH CURVE</view>
+          </view>
+        </view>
+      </view>
+      <view class='content-one' style='height:27vh;float:right;margin-right:10px;margin-top:5px;' bindtap='wenjuan'>
+        <image src='../../image/icon3.png'></image>
+        <view class='content-title'>
+          <view class='jz'>
+            <text style='font-size:70%'>长高</text>
+            <view class='a1'>打卡计划</view>
+            <view class='a2'>A GROW PLAN</view>
+          </view>
+        </view>
+      </view>
+      <view class='content-one' style='height:27vh;float:left;margin-left:10px;margin-top:5px;' bindtap='team'>
+        <image src='../../image/icon4.png'></image>
+        <view class='content-title'>
+          <view class='jz'>
+            <text style='font-size:70%'>一对一</text>
+            <view class='a1'>长高服务</view>
+            <view class='a2'>HEIGHT PREDICTION</view>
+          </view>
+        </view>
+      </view>
+      <view class='yuan' bindtap='nutrition' style=' z-index: 999999;border-radius:90%;border:1.5vh solid #f3f2f8;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);'>
+        <view class='neiyuan' style='width:25vw;height:25vw;'>
+          <view class='neiyuan-tit'>
+            TOOLS
+          </view>
+          <view class='neiyuan-txt'>
+            身高管理工具
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='container-bm'>
+    <!-- 5大身高管理体系 开始 -->
+
+    <view class="circle-out">
+      <view class="circle-in">
+        <view class="userinfo-avatar">
+          <block wx:for="{{menuList}}" wx:key="key">
+            <view class='dian{{item.index}}'></view>
+            <view class='font{{item.index}}'>{{item.menu}}</view>
+          </block>
+        </view>
+        <view class="userinfo-avatar2"></view>
+
+        <view wx:if="{{radar < 5 && radar != 2}}">
+          <view class="userinfo-avatar3" style='background-color:#ec881d'>
+            <!-- <view class='text3' bindtap='pingjia' id="{{radar}}">即刻开始</view> -->
+            <view id="taiji">
+              <view class='left' bindtap='pingjia' id="{{radarpingjia}}"></view>
+              <view class='right' bindtap='daka' id="{{radardaka}}"></view>
+              <view class='left_one'>
+                <view class='yindaka' bindtap='pingjia' id="{{radarpingjia}}">
+                  <view class='font-daka'>
+                    评
+                  </view>
+                  <view class='jia'>
+                    价
+                  </view>
+                </view>
+              </view>
+              <view class='right_one'>
+                <view class="yangpingce" bindtap='daka' id="{{radardaka}}">
+                  <view class='font-ping'>
+                    卡
+                  </view>
+                  <view class='da'>
+                    打
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{radar == 5}}">
+          <view class="userinfo-avatar3">
+            <text class='sys-text1'>SYSTEM</text>
+            <text class='sys-text2'>一站式身高管理方案</text>
+            <button style='width:55%;border:none;color:#fff;background:#f1840f;top:52%;font-size:10pt' bindtap='nutrition'>即刻开启</button>
+          </view>
+        </view>
+
+        <view wx:else>
+          <view class="userinfo-avatar3">
+            <text class='text3'>敬请期待</text>
+          </view>
+        </view>
+
+
+        <view class="menu-list">
+          <view class="menu-item" wx:for="{{menuList}}" wx:key="unique">
+            <view class="menu-circle-item" style="-webkit-transform: rotate({{item.deg}}deg);" bindtap='anniu' id="{{item.index}}" data-menu="{{item.menu}}">
+              <image class="image-style rotate{{item.index}}" src="{{item.src}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="process">
+      <view style='text-align:center;padding-top:20px;'>
+        <view class="common-title-big">PROCESS</view>
+        <view class="common-title-text">身高管理指导流程</view>
+      </view>
+    </view>
+
+    <view class='zd-t'>
+      <view class='zd'>
+        <view class='zd-2 zd-left'>
+          <image class='img' src='../../image/z1.png'></image>
+          <view class='box' bindtap='heightguanli2'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>身高预测</view>
+            <image src='../../image/icon6.png' class='zd-icon'></image>
+          </view>
+        </view>
+        <view class='zd-2 zd-right'>
+          <image class='img' src='../../image/z6.png'></image>
+          <view class='box'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>制定初期目标</view>
+            <image src='../../image/icon6-1.png' class='zd-icon'></image>
+          </view>
+        </view>
+      </view>
+      <view class='zd'>
+        <view class='zd-2 zd-left'>
+          <image class='img' src='../../image/z2.png'></image>
+          <view class='box' bindtap='heightguanli'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>身高管理</view>
+            <image src='../../image/icon6-1.png' class='zd-icon'></image>
+          </view>
+        </view>
+        <view class='zd-2 zd-right'>
+          <image class='img' src='../../image/z5.png'></image>
+          <view class='box'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>专业评估</view>
+            <image src='../../image/icon6-2.png' class='zd-icon'></image>
+          </view>
+        </view>
+      </view>
+      <view class='zd'>
+        <view class='zd-2 zd-left'>
+          <image class='img' src='../../image/z3.png'></image>
+          <view class='box' bindtap='team'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>1对1全程指导</view>
+            <image src='../../image/icon6.png' class='zd-icon'></image>
+          </view>
+        </view>
+        <view class='zd-2 zd-right'>
+          <image class='img' src='../../image/z4.png'></image>
+          <view class='box'>
+            <view class='zd-common-title-big' style='font-size:12px;color:#fff;'>达到预期目标</view>
+            <view style='border-radius:90%;width:16px;height:16px;border:1px solid #fff;margin:10% auto;'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--poster='https://wx.biergao.vip/uploads/article/201804/index.jpg'  -->
+    <!-- 走进身高管理 开始 -->
+    <view style='padding-top:10px;width:100%;'>
+      <video src='https://wx.biergao.vip/uploads/b/784344c9f6e7dd9f6322783457cfb071.mp4' objectFit='cover' style='width:100%;display:inline-block;line-height:0;overflow:hidden;position:absolute;background:cover;'>
+      </video>
+    </view>
+  </view>
+</view>
+
+<view class="cf-bg {{cfBg ? 'kkk' : 'lll'}}" style="z-index:99999;">
+  <image src='../../image/nutrition.png' style='width:100%;height:100vh;'></image>
+  <view class='jz2'>
+
+    <view style='border:1px solid #fff;border-radius:20px;min-height:250px;'>
+      <view style='width:100%;height:40px;'>
+        <view class='x' bindtap='cemojiCfBg'>
+          <image src='../../image/x.png' style='width:16px;height:16px;'></image>
+        </view>
+      </view>
+
+      <block wx:if="{{radarpingjiatype == false}}">
+
+        <view class='zun-tip'>
+          <view style='font-size:17px;float:left;'>尊敬的小主：</view>
+          <view class='tip'>坚持每天打卡养成营养摄入好习惯，我会为小主统计每周打卡生成报告。请常来看我哦！</view>
+        </view>
+        <view class='bt_v2' style='height:40px;'>
+          <block wx:if="{{openbuka == 200}}">
+            <block wx:if="{{yydkpfjl}}">
+              <button bindtap='godaka' class='bt-l' data-typeid="{{radardakatype}}">打卡</button>
+              <button bindtap='yydkpfjllist' class='bt-r' data-typeid="{{radarpingjiatype}}">评价</button>
+            </block>
+            <block wx:else>
+              <button bindtap='godaka' class='bt-center' data-typeid="{{radardakatype}}">打卡></button>
+            </block>
+          </block>
+          <block wx:else>
+            <block wx:if="{{yydkpfjl}}">
+              <button bindtap='godaka' class='bt-l' data-typeid="{{radardakatype}}">补卡</button>
+              <button bindtap='yydkpfjllist' class='bt-r' data-typeid="{{radarpingjiatype}}">评价</button>
+            </block>
+            <block wx:else>
+              <button bindtap='godaka' class='bt-center' data-typeid="{{radardakatype}}">补卡></button>
+            </block>
+          </block>
+        </view>
+
+
+      </block>
+
+      <block wx:else>
+
+
+
+        <view class='headr2bu'>
+          <view style='font-size:15px;width:230px;margin:0 auto;'>
+            <block wx:if="{{radar == 0}}">
+              想知道您的孩子当前营养情况
+            </block>
+            <block wx:elif="{{radar == 1}}">
+              想知道您的孩子当前情绪状态
+            </block>
+            <block wx:elif="{{radar == 2}}">
+              想知道您的孩子当前内分泌水平
+            </block>
+            <block wx:elif="{{radar == 3}}">
+              想知道您的孩子当前运动状态
+            </block>
+            <block wx:else>
+              想知道您的孩子当前睡眠状态
+            </block>
+          </view>
+          <view class='jinxu'>
+            <block>仅需</block>
+            <view class='x2'>2</view>
+            <block>步</block>
+          </view>
+        </view>
+        <view class='headr2bu2'>
+          <view style='font-size: 15px;width: 230px;margin: 0 auto;height: 20px;'>
+            <view class='buzhou'>
+              <view>第</view>
+              <view class='x2'>1</view>
+              <view>步</view>
+            </view>
+            <view class='do'>
+              <view style='font-size:16px'>
+                <block wx:if="{{radar == 0}}">
+                  完成《膳食调查表》答题
+                </block>
+                <block wx:elif="{{radar == 1}}">
+                  完成《情绪调查表》答题
+                </block>
+                <block wx:elif="{{radar == 2}}">
+                  完成《内分泌调查表》答题
+                </block>
+                <block wx:elif="{{radar == 3}}">
+                  完成《运动调查表》答题
+                </block>
+                <block wx:else>
+                  完成《睡眠调查表》答题
+                </block>
+              </view>
+            </view>
+          </view>
+          <view style='font-size:15px;width:230px;margin:0 auto;margin-top:10px;'>
+            <view class='buzhou2'>
+              <view>第</view>
+              <view class='x3'>2</view>
+              <view>步</view>
+            </view>
+            <view class='do'>
+              <view style='font-size:15px;text-align:left;line-height:20px'>
+                <block wx:if="{{radar == 0}}">
+                  获得一对一个性化营养膳食评价及建议
+                </block>
+                <block wx:elif="{{radar == 1}}">
+                  获得一对一个性化情绪调查问答及建议
+                </block>
+                <block wx:elif="{{radar == 2}}">
+                  获得一对一个性化内分泌调查问答及建议
+                </block>
+                <block wx:elif="{{radar == 3}}">
+                  获得一对一个性化运动调查问答及建议
+                </block>
+                <block wx:else>
+                  获得一对一个性化睡眠调查问答及建议
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='bt_v2' style='height:40px;width:60vw'>
+          <block wx:if="{{isyingyang}}">
+            <button bindtap='ystar' class='bt-l' data-typeid="{{radar}}">重新答题</button>
+            <button bindtap='yingyanglist' class='bt-r' data-typeid="{{radar}}">往期评价</button>
+          </block>
+          <block wx:else>
+            <button bindtap='ystar' class='bt2' data-typeid="{{radar}}">开始答题</button>
+          </block>
+        </view>
+        <view style='font-size:10px;color:#fff;margin-bottom:30px;'>
+          （题目均为单选题）
+        </view>
+
+
+
+      </block>
+    </view>
+  </view>
+
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" style='z-index:999999' hidden="{{!showMessage}}">{{messageContent}}</view>

@@ -1,0 +1,91 @@
+<image src='../../image/nutrition.png' style='width:100%;height:100%;'></image>
+<view class="container">
+  <view class="cfbg {{totalquestion!=false ? 'kkk' : 'lll'}}">
+    <form bindsubmit='nextquestion'>
+
+      <view class='content'>
+        <block wx:if="{{questiontype==0}}">
+          <view class='tm_index'>
+            <text space='nbsp'>共{{totalquestion}}题 当前第{{questionid}}题</text>
+          </view>
+
+          <view class='tm_detail'>
+            <text>{{question}}</text>
+          </view>
+
+          <view class='anwser'>
+            <radio-group name='anwser'>
+              <radio wx:for="{{anwserdata}}" wx:key name='' value='{{item.score}}' color='#FF8C00'>{{item.anwser}}</radio>
+            </radio-group>
+          </view>
+        </block>
+        <block wx:elif="{{questiontype==1}}">
+          <view class='tm_index'>
+            <text space='nbsp'>共{{totalquestion}}题 当前第{{questionid}}题</text>
+          </view>
+
+          <view class='tm_detail'>
+            <text>{{question}}</text>
+          </view>
+
+          <view class='anwser'>
+            <radio-group name='anwser'>
+              <radio wx:for="{{anwserdata}}" wx:key name='' value='{{item.score}}' color='#FF8C00'>{{item.anwser}}</radio>
+            </radio-group>
+          </view>
+        </block>
+        <block wx:elif="{{questiontype==2}}">
+          <view class='tm_index'>
+            <text space='nbsp'>共{{totalquestion}}题 当前第{{questionid}}题</text>
+          </view>
+
+          <view class='tm_detail'>
+            <text>{{question}}</text>
+          </view>
+
+          <view class='anwser'>
+            <radio-group name='anwser'>
+              <radio wx:for="{{anwserdata}}" wx:key name='' value='{{item.score}}' color='#FF8C00'>{{item.anwser}}</radio>
+            </radio-group>
+          </view>
+        </block>
+        <block wx:elif="{{questiontype==3}}">
+          <view class='tm_index'>
+            <text space='nbsp'>共{{totalquestion}}题 当前第{{questionid}}题</text>
+          </view>
+
+          <view class='tm_detail'>
+            <text>{{question}}</text>
+          </view>
+
+          <view class='anwser'>
+            <radio-group name='anwser'>
+              <radio wx:for="{{anwserdata}}" wx:key name='' value='{{item.score}}' color='#FF8C00'>{{item.anwser}}</radio>
+            </radio-group>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='tm_index'>
+            <text space='nbsp'>共{{totalquestion}}题 当前第{{questionid}}题</text>
+          </view>
+
+          <view class='tm_detail'>
+            <text>{{question}}</text>
+          </view>
+
+          <view class='anwser'>
+            <radio-group name='anwser'>
+              <radio wx:for="{{anwserdata}}" wx:key name='' value='{{item.score}}' color='#FF8C00'>{{item.anwser}}</radio>
+            </radio-group>
+          </view>
+        </block>
+      </view>
+
+
+      <view class='bt_v'>
+        <button form-type='submit' class='bt'>{{btname}}</button>
+      </view>
+    </form>
+  </view>
+
+</view>

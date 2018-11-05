@@ -1,0 +1,51 @@
+<view class="search">
+  <view class="search-bar">
+    <view style='margin:0 auto;box-size:border-box;'>
+      <view style='width:{{hw / 2}}px;font-size:14px;line-height:25px;text-align:center; border-radius: 7px;z-index:999;'>
+        <!-- 头部选项 -->
+        <view class="swiper-tab-item {{currentTab==3 ? 'on' :'off'}}" data-current="3" bindtap="clickTab" style='float:left;width:50%;'>一级</view>
+        <view class="swiper-tab-item {{currentTab==1 ? 'on' :'off'}}" data-current="1" bindtap="clickTab" style='float:right;width:50%;'>二级</view>
+        <!-- 头部选项 -->
+      </view>
+    </view>
+  </view>
+  <view class="search-result">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+      <view class="result-item" wx:for="{{userlist}}" wx:key="unique" data-data="{{item}}">
+        <view style="display:{{currentTab==3 ? 'block' : 'none'}}">
+            <view style='width:{{hw20}}px;margin:10px auto;overflow:hidden;padding:10px;border-radius:5px;background:#fff;'>
+              <view style='float:left;margin-right:5px; ' bindtap='lookuserinfo' id="{{item.id}}">
+
+                  <image src='{{item.headimgurl}}' style='width:{{hw20_3}}px;height:{{hw20_3}}px;float:left;background:#eeedf2;margin:auto; '></image>
+              </view>
+              <view class="item" style='width:{{hw20_hw20_3}}px;height:{{hw20_3_20}}px '>
+                <view style='float:right;width:100%;margin:0 auto;float:right; '>
+                  <view class="right">姓名：{{item.wxname}}</view>
+                  <view class="right">手机号：{{item.tel}}</view>
+                   <!-- <view class="right">识别码：{{item.openid}}</view> -->
+                  <view class="right" style='color:green'>提示:点击用户头像查看</view> 
+                </view>
+              </view>
+            </view>
+         
+        </view>
+         <view style="display:{{currentTab==1 ? 'block' : 'none'}}">
+             <view style='width:{{hw20}}px;margin:10px auto;overflow:hidden;padding:10px;border-radius:5px;background:#fff;'>
+              <view style='float:left;margin-right:5px; ' bindtap='lookuserinfo' id="{{item.id}}">
+
+                  <image src='{{item.headimgurl}}' style='width:{{hw20_3}}px;height:{{hw20_3}}px;float:left;background:#eeedf2;margin:auto; '></image>
+              </view>
+              <view class="item" style='width:{{hw20_hw20_3}}px;height:{{hw20_3_20}}px '>
+                <view style='float:right;width:100%;margin:0 auto;float:right; '>
+                  <view class="right">姓名：{{item.wxname}}</view>
+                  <view class="right">手机号：{{item.tel}}</view>
+                   <!-- <view class="right">识别码：{{item.openid}}</view> -->
+                  <view class="right" style='color:green'>提示:点击用户头像查看</view> 
+                </view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

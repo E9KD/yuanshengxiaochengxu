@@ -1,0 +1,110 @@
+/**index.wxss**/
+
+page {
+  width: 100vw;
+  background-image: url('https://wx.biergao.vip/uploads/b/201805/nutrition.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/*搜索*/
+
+.search {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*搜索结果*/
+
+.search-result {
+  flex: auto;
+  position: relative;
+}
+
+.search-result scroll-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.box {
+  overflow: hidden;
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.result-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin:0 auto;
+}
+
+.loading {
+  padding: 10rpx;
+  text-align: center;
+  color: #333;
+}
+
+.loading:before {
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+
+.loading.complete:before {
+  display: none;
+}
+.ju{
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 250, 39));
+  width:90vw;
+height:60px;
+border-radius:60px;
+margin:8px;
+
+}
+.head{
+   width:60px;
+height:60px;
+border-radius:50%;
+line-height: 60px;
+float: left;
+}
+.time{
+text-align:center;
+width:160px;
+height:60px;
+position:absolute;
+line-height: 60px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+color:#fff;
+
+
+}
+.fenshu{
+  width:60px;
+background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+height:60px;
+border-radius:50%;
+text-align: center;
+line-height: 60px;
+font-size: 18px;
+float: right;
+color: #fff;
+}

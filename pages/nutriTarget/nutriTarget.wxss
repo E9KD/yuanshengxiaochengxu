@@ -1,0 +1,203 @@
+page {
+  width: 100vw;
+  background-image: url('https://wx.biergao.vip/uploads/b/201805/nutrition.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: 100% 100%;
+}
+
+.container {
+  width: 100vw;
+  height: 95vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.score {
+  border-bottom: 0.1rpx solid #fff;
+}
+
+.scoreTextV {
+  margin-bottom: 5vh;
+}
+
+.scoreText1 {
+  background: linear-gradient(to left, #ff8c00, #fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+  text-align:center;
+}
+
+.out_score {
+  margin-left: 32.5vw;
+  /* margin-bottom: 3vh; */
+}
+
+.score_img {
+  border: 2px solid #ff8c00;
+  border-radius: 50%;
+  height: 35vw;
+  width: 35vw;
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+
+.math {
+  font-size: 2.5em;
+}
+
+.fen {
+  font-size: 1.2em;
+}
+
+.score_img text {
+  background: linear-gradient(to left, #ff8c00, #fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.advice {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.scoreText2 {
+  color: #fff;
+  font-size: 11pt;
+}
+.assess {
+  margin-top: 8vh;
+  border-bottom: 0.1rpx solid #fff;
+}
+
+.intro {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.assess_img {
+  margin-bottom: 5vh;
+}
+
+.target {
+  margin-top: 1vh;
+  border-bottom: 0.1rpx solid #fff;
+  height: auto;
+}
+
+.tar_out {
+  margin-bottom: 5vh;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.tar_title {
+  height: auto;
+}
+
+.tarTitle {
+  font-size: 11pt;
+  color: #fff;
+  width: 100vw;
+  height: 10vh;
+  padding: 0px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tit {
+  float: right;
+  width: 68vw;
+  /* height: 10vh; */
+  vertical-align: middle;
+}
+
+.rank {
+  color: #fff;
+  float: left;
+  margin-left: 4vw;
+  vertical-align: middle;
+  text-align: center;
+  height: 10vh;
+  font-size: 28px;
+  line-height: 10vh;
+}
+
+.icon {
+  float: left;
+  vertical-align: middle;
+  /* height: 10vh; */
+  line-height: 10vh;
+}
+
+.tar_content {
+}
+
+.tar_content_change {
+}
+
+.tarContent {
+  color: #fff;
+  font-size: 9pt;
+}
+
+.canvas {
+  margin-top: 3vh;
+  height: 200px;
+  width: 100vw;
+  margin-bottom: 8vh;
+}
+
+.bt_v {
+  width: 5vw;
+  height: 4vw;
+  margin: 0 auto;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+.push {
+  width: 100%;
+  height: 100%;
+}
+
+.long-dec {
+  display: -webkit-box; /*关键属性*/
+  font-size: 28rpx;
+  color: #cfcfd0;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical; /* 关键属性 */
+  -webkit-line-clamp: 6; /* 关键属性 */
+  overflow: hidden; /* 关键属性 */
+  text-overflow: ellipsis; /* 超出内容显示省略号*/
+}
+
+.hide {
+  display: -webkit-box;
+  width: 68vw;
+  height: 20px;
+  margin-left: 22vw;
+}
+
+.show {
+  display: block;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.arrow {
+  position: absolute;
+  width: 40rpx;
+  height: 43rpx;
+  left: 50%;
+  transform: translate(-50%);
+}

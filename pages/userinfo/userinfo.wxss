@@ -1,0 +1,81 @@
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+.item {
+  padding: 10px;
+  height: auto;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 5px;
+  float: right;
+  font-size: 73%;
+  margin: 0 auto;
+  background:#eeedf2;
+}
+/*搜索*/  
+.search{  
+  flex: auto;  
+  display: flex;  
+  flex-direction: column;  
+  background: #fff;  
+}  
+.search-bar{  
+  flex: none;  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  padding: 20rpx;  
+  background: #f4f4f4;  
+}   
+/*搜索结果*/  
+.search-result{  
+  flex: auto;  
+  position: relative;  
+}  
+.search-result scroll-view{  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  top: 0;  
+}  
+.on {
+  background: #f08519;
+  color: #fff;
+  border: 1px solid #f08519;
+  box-sizing: border-box;
+}
+.off{
+  background: #fff;
+  color: #000;
+  border: 1px solid #f08519;
+  box-sizing: border-box;
+}
+
+.result-item{  
+  position: relative;  
+  display: flex;  
+  flex-direction: column;  
+  /* padding: 20rpx 0 20rpx 110rpx; */
+  overflow: hidden;  
+  border-bottom: 2rpx solid #e5e5e5;  
+}  
+.loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  

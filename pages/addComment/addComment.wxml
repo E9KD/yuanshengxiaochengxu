@@ -1,0 +1,30 @@
+<view class="box">
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+
+    <view class="shuru">
+      <textarea class="shuru1" placeholder="这一刻的想法" placeholder-style="font-size:12pt;color:#E4E3E3" name="content" />
+    </view>
+
+    <view class="images-wrapper">
+      <view style='width:100px;height:20px;font-size:12pt;'>
+        <view style='float:left'>上传照片</view>
+        <view style='float:right'>{{imgLength}}/9</view>
+      </view>
+      <view class="images-list">
+        <block wx:for="{{imglist}}" wx:for-item="image" wx:key="key">
+          <image src="{{image}}" class="images-image" data-src="{{image}}" bindtap="previewImage"></image>
+        </block>
+          <view class="images-image image-plus" bindtap="chooseImage" style="display:{{imgLength==9 ? 'none' :'block'}}">
+            <view class="image-plus-horizontal"></view>
+            <view class="image-plus-vertical"></view>
+          </view>
+      </view>
+    </view>
+
+
+    <button class="buttona" form-type="submit">提交</button>
+
+  </form>
+
+</view>

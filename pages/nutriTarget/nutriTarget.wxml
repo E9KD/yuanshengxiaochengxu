@@ -1,0 +1,381 @@
+<view class='container'>
+  <view class='score'>
+    <view class='scoreTextV'>
+      <view class='scoreText1' space='nbsp'>
+        <block wx:if="{{questiontype == 0}}">
+          小主，您此次膳食调查表的得分是：
+        </block>
+        <block wx:elif="{{questiontype == 1}}">
+          小主，您此次情绪调查表的得分是：
+        </block>
+        <block wx:elif="{{questiontype == 2}}">
+          小主，您此次内分泌调查表的得分是：
+        </block>
+        <block wx:elif="{{questiontype == 3}}">
+          小主，您此次运动调查表的得分是：
+        </block>
+        <block wx:else>
+          小主，您此次睡眠调查表的得分是：
+        </block>
+      </view>
+    </view>
+
+    <view class='out_score'>
+      <view class='score_img'>
+        <text class='math'>{{total}}</text>
+        <text class='fen'>分</text>
+      </view>
+    </view>
+
+    <view class='advice'>
+      <block wx:if="{{questiontype == 0}}">
+        <text class='scoreText2' space='nbsp'>
+          {{detail9}}
+        </text>
+      </block>
+      <block wx:else>
+        <view class='scoreText2' space='nbsp' style='margin:5vh 0px;'>
+          {{detail9}}
+          <view style='width:90vw;margin:0 auto;'>
+            <view class="long-dec">
+              <block wx:for="{{jielun}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+                <block wx:if="{{cellData.type == 'view'}}">
+                  <view class="p">
+                    <block wx:for="{{cellData.child}}" wx:key="text">
+                      <text>{{item.text}}</text>
+                    </block>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+
+      </block>
+
+    </view>
+
+  </view>
+
+  <block wx:if="{{questiontype == 0}}">
+    <view class='assess'>
+      <view class='intro'>合理营养、平衡膳食评价与对策</view>
+
+      <view class='assess_img'>
+        <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+      </view>
+    </view>
+
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/food.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty1}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail1}}</view>
+          </view>
+
+        </view>
+
+        <view style='width:90vw;margin:0 auto;'>
+          <view class="long-dec {{isshow==1?'show':'hide'}}">
+            <block wx:for="{{p1}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+              <block wx:if="{{cellData.type == 'view'}}">
+                <view class="p">
+                  <!-- <text style='font-size:16px;width:90vw;margin:0 auto' hidden="{{isshow==1?'true':'false'}}">对策：</text> -->
+                  <block wx:for="{{cellData.child}}" wx:key="text">
+                    <text>{{item.text}}</text>
+                  </block>
+                </view>
+              </block>
+            </block>
+          </view>
+        </view>
+
+        <view class='bt_v' bindtap='showlong' id='1'>
+          <image src='{{isshow==1?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/shanshi.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty2}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail2}}</view>
+          </view>
+
+        </view>
+
+
+
+        <view class="long-dec {{isshow==2?'show':'hide'}}">
+          <block wx:for="{{p2}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+          </block>
+        </view>
+
+
+
+        <view class='bt_v' bindtap='showlong' id='2'>
+          <image src='{{isshow==2?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/egg.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty3}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail3}}</view>
+          </view>
+
+        </view>
+
+        <view class="long-dec {{isshow==3?'show':'hide'}}">
+          <block wx:for="{{p3}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+          </block>
+        </view>
+
+
+        <view class='bt_v' bindtap='showlong' id='3'>
+          <image src='{{isshow==3?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/zhifang.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty4}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail4}}</view>
+          </view>
+
+        </view>
+
+
+        <view class="long-dec {{isshow==4?'show':'hide'}}">
+          <block wx:for="{{p4}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+
+          </block>
+        </view>
+
+
+
+        <view class='bt_v' bindtap='showlong' id='4'>
+          <image src='{{isshow==4?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/vita.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty5}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail5}}</view>
+          </view>
+
+        </view>
+
+        <view class="long-dec {{isshow==5?'show':'hide'}}">
+          <block wx:for="{{p5}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+
+          </block>
+        </view>
+
+
+        <view class='bt_v' bindtap='showlong' id='5'>
+          <image src='{{isshow==5?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/gai.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty6}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail6}}</view>
+          </view>
+
+        </view>
+
+        <view class="long-dec {{isshow==6?'show':'hide'}}">
+          <block wx:for="{{p6}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+
+          </block>
+        </view>
+
+
+        <view class='bt_v' bindtap='showlong' id='6'>
+          <image src='{{isshow==6?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/tie.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty7}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail7}}</view>
+          </view>
+
+        </view>
+
+        <view class="long-dec {{isshow==7?'show':'hide'}}">
+          <block wx:for="{{p7}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+
+          </block>
+        </view>
+
+        <view class='bt_v' bindtap='showlong' id='7'>
+          <image src='{{isshow==7?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='target'>
+      <view class='tar_out'>
+        <view class='tar_title'>
+          <view class='icon'>
+            <image src='../../image/xin.png' style='width:10vw;height:10vw;vertical-align:middle;'></image>
+          </view>
+
+          <view class='rank'>
+            {{ty8}}
+          </view>
+
+          <view class='tit'>
+            <view class='tarTitle'>{{detail8}}</view>
+          </view>
+
+        </view>
+
+
+        <view class="long-dec {{isshow==8?'show':'hide'}}">
+          <block wx:for="{{p8}}" wx:for-index="idy" wx:for-item="cellData" wx:key="item">
+            <block wx:if="{{cellData.type == 'view'}}">
+              <view class="p">
+                <block wx:for="{{cellData.child}}" wx:key="text">
+                  <text>{{item.text}}</text>
+                </block>
+              </view>
+            </block>
+
+          </block>
+        </view>
+
+
+
+        <view class='bt_v' bindtap='showlong' id='8'>
+          <image src='{{isshow==8?push:pull}}' class='push'></image>
+        </view>
+
+      </view>
+    </view>
+  </block>
+</view>

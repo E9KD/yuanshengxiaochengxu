@@ -1,0 +1,208 @@
+<image src='../../image/nutrition.png' style='width:100%;height:100%;'>
+</image>
+
+<view class='container'>
+  <view class='listbox'>
+    <view class='listtop'>
+      <image class='icon' src='../../image/icon16.png'></image>
+      <text class='text1'>营养</text>
+    </view>
+    <view class='listbom'>
+      <view class='listbomleft text' bindtap='emojiShowHide' id="0">评价 ></view>
+      <view class='listbomright text' bindtap='emojiShowdaka' id="0">打卡 ></view>
+    </view>
+  </view>
+  <view class='box'></view>
+  <view class='listbox'>
+    <view class='listtop'>
+      <image class='icon' src='../../image/icon17.png'></image>
+      <text class='text1'>运动</text>
+      <text class='taps'>敬请期待</text>
+    </view>
+    <view class='listbom'>
+      <view class='listbomleft text' bindtap='emojiShowHide' id="3">评价 ></view>
+      <view class='listbomright text' bindtap='emojiShowdaka' id="3">打卡 ></view>
+    </view>
+  </view>
+  <view class='box'></view>
+  <view class='listbox'>
+    <view class='listtop'>
+      <image class='icon' src='../../image/icon18.png'></image>
+      <text class='text1'>睡眠</text>
+      <text class='taps'>敬请期待</text>
+    </view>
+    <view class='listbom'>
+      <view class='listbomleft text' bindtap='emojiShowHide' id="4">评价 ></view>
+      <view class='listbomright text' bindtap='emojiShowdaka' id="4">打卡 ></view>
+    </view>
+  </view>
+  <view class='box'></view>
+  <view class='listbox'>
+    <view class='listtop'>
+      <image class='icon' src='../../image/icon19.png'></image>
+      <text class='text1'>情绪</text>
+      <text class='taps'>敬请期待</text>
+    </view>
+    <view class='listbom'>
+      <view class='listbomleft text' bindtap='emojiShowHide' id="1">评价 ></view>
+      <view class='listbomright text' bindtap='emojiShowdaka' id="1">打卡 ></view>
+    </view>
+  </view>
+  <view class='box'></view>
+  <view class='listbox'>
+    <view class='listtop'>
+      <image class='icon' src='../../image/icon20.png'></image>
+      <text class='text1'>内分泌</text>
+      <text class='taps'>敬请期待</text>
+    </view>
+    <view class='listbom'>
+      <view class='listbomleft text' bindtap='emojiShowHide' id="2">评价 ></view>
+      <view class='listbomright text' bindtap='emojiShowdaka' id="2">打卡 ></view>
+    </view>
+  </view>
+
+</view>
+
+<view class="cf-bg {{cfBg ? 'kkk' : 'lll'}}" style="z-index:99999;">
+  <image src='../../image/nutrition.png' style='width:100%;height:100vh;'></image>
+  <view class='jz2'>
+
+    <view style='border:1px solid #fff;border-radius:20px;min-height:250px;'>
+      <view style='width:100%;height:40px;'>
+        <view class='x' bindtap='cemojiCfBg'>
+          <image src='../../image/x.png' style='width:16px;height:16px;'></image>
+        </view>
+      </view>
+
+      <block wx:if="{{radarpingjiatype == false}}">
+
+        <view class='zun-tip'>
+          <view style='font-size:17px;float:left;'>尊敬的小主：</view>
+          <view class='tip'>坚持每天打卡养成营养摄入好习惯，我会为小主统计每周打卡生成报告。请常来看我哦！</view>
+        </view>
+        <view class='bt_v2' style='height:40px;'>
+          <block wx:if="{{openbuka == 200}}">
+            <block wx:if="{{yydkpfjl}}">
+              <button bindtap='godaka' class='bt-l' data-typeid="{{radardakatype}}">打卡</button>
+              <button bindtap='yydkpfjllist' class='bt-r' data-typeid="{{radarpingjiatype}}">评价</button>
+            </block>
+            <block wx:else>
+              <button bindtap='godaka' class='bt-center' data-typeid="{{radardakatype}}">打卡></button>
+            </block>
+          </block>
+          <block wx:else>
+            <block wx:if="{{yydkpfjl}}">
+              <button bindtap='godaka' class='bt-l' data-typeid="{{radardakatype}}">补卡</button>
+              <button bindtap='yydkpfjllist' class='bt-r' data-typeid="{{radarpingjiatype}}">评价</button>
+            </block>
+            <block wx:else>
+              <button bindtap='godaka' class='bt-center' data-typeid="{{radardakatype}}">补卡></button>
+            </block>
+          </block>
+        </view>
+
+
+      </block>
+      <block wx:else>
+
+
+
+        <view class='headr2bu'>
+          <view style='font-size:15px;width:230px;margin:0 auto;'>
+            <block wx:if="{{radarpingjia == 0}}">
+              想知道您的孩子当前营养情况
+            </block>
+            <block wx:elif="{{radarpingjia == 1}}">
+              想知道您的孩子当前情绪状态
+            </block>
+            <block wx:elif="{{radarpingjia == 2}}">
+              想知道您的孩子当前内分泌水平
+            </block>
+            <block wx:elif="{{radarpingjia == 3}}">
+              想知道您的孩子当前运动状态
+            </block>
+            <block wx:else>
+              想知道您的孩子当前睡眠状态
+            </block>
+          </view>
+          <view class='jinxu'>
+            <block>仅需</block>
+            <view class='x2'>2</view>
+            <block>步</block>
+          </view>
+        </view>
+        <view class='headr2bu2'>
+          <view style='font-size: 15px;width: 230px;margin: 0 auto;height: 20px;'>
+            <view class='buzhou'>
+              <view>第</view>
+              <view class='x2'>1</view>
+              <view>步</view>
+            </view>
+            <view class='do'>
+              <view style='font-size:16px'>
+                <block wx:if="{{radarpingjia == 0}}">
+                  完成《膳食调查表》答题
+                </block>
+                <block wx:elif="{{radarpingjia == 1}}">
+                  完成《情绪调查表》答题
+                </block>
+                <block wx:elif="{{radarpingjia == 2}}">
+                  完成《内分泌调查表》答题
+                </block>
+                <block wx:elif="{{radarpingjia == 3}}">
+                  完成《运动调查表》答题
+                </block>
+                <block wx:else>
+                  完成《睡眠调查表》答题
+                </block>
+              </view>
+            </view>
+          </view>
+          <view style='font-size:15px;width:230px;margin:0 auto;margin-top:10px;'>
+            <view class='buzhou2'>
+              <view>第</view>
+              <view class='x3'>2</view>
+              <view>步</view>
+            </view>
+            <view class='do'>
+              <view style='font-size:15px;text-align:left;line-height:20px'>
+                <block wx:if="{{radarpingjia == 0}}">
+                  获得一对一个性化营养膳食评价及建议
+                </block>
+                <block wx:elif="{{radarpingjia == 1}}">
+                  获得一对一个性化情绪调查问答及建议
+                </block>
+                <block wx:elif="{{radarpingjia == 2}}">
+                  获得一对一个性化内分泌调查问答及建议
+                </block>
+                <block wx:elif="{{radarpingjia == 3}}">
+                  获得一对一个性化运动调查问答及建议
+                </block>
+                <block wx:else>
+                  获得一对一个性化睡眠调查问答及建议
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='bt_v2' style='height:40px'>
+          <block wx:if="{{isyingyang}}">
+            <button bindtap='ystar' class='bt-l' data-typeid="{{radarpingjia}}">重新答题</button>
+            <button bindtap='yingyanglist' class='bt-r' data-typeid="{{radarpingjia}}">往期评价</button>
+          </block>
+          <block wx:else>
+            <button bindtap='ystar' class='bt2' data-typeid="{{radarpingjia}}">开始答题</button>
+          </block>
+        </view>
+        <view style='font-size:10px;color:#fff;margin-bottom:30px;'>
+          （题目均为单选题）
+        </view>
+
+
+
+      </block>
+    </view>
+  </view>
+
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" style='z-index:999999' hidden="{{!showMessage}}">{{messageContent}}</view>
