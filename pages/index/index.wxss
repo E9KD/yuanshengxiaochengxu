@@ -647,6 +647,7 @@
   height: 40px;
   line-height: 40px;
   color: #fff;
+  font-size: 35rpx;
 }
 .bt-center{
   border-radius:50px;
@@ -660,6 +661,7 @@ width:100px;
 }
 
 .bt-r {
+  font-size: 35rpx;
   border-radius: 50px;
   background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
   margin: 0 auto;

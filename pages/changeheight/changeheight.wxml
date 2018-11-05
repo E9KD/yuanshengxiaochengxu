@@ -1,35 +1,14 @@
 <view class='container'>
   <form bindsubmit="savePersonInfo">
-    <view class="page-section page-section-gap">
-      <radio-group name="sex">
-        <label class='label1'>
-          <radio value="1" />男</label>
-        <label class='label1'>
-          <radio value="2" />女</label>
-      </radio-group>
-    </view>
-    <view class='insinfo'>
-      <view class="lar-r">姓名</view>
-      <view class="form-item-bd">
-        <input type="text" name="username" value="" placeholder='请输入姓名' />
-      </view>
-    </view>
 
-    <view class='insinfo'>
-      <view class="lar-r">生日</view>
-      <view class="form-item-bd">
-        <picker bindchange="bindBrithdayChange" mode="date" value="{{brithday}}">
-        <view class="input {{!brithday ? 'input-placeholder' : ''}}">{{brithday || '请选择您的生日'}}</view>
-          <input type="text" name="brithday" value="{{brithday}}" class="hidden"/>
-        </picker>
-      </view>
-    </view>
 
     <view class='insinfo'>
       <view class="lar-r">期望身高</view>
       <view class="form-item-bd">
-        <picker bindchange="changeProvince" mode="selector" range="{{provinceName}}" value="{{provinceDefIndex}}">
-          <view class="input {{!provinceName[provinceSelIndex] ? 'input-placeholder' : ''}}">{{provinceName[provinceSelIndex] || '请选择期望身高'}}{{!provinceName[provinceSelIndex]  ? '' : 'CM'}}</view>
+        <picker bindchange="changeProvince" mode="selector" range="{{provinceName}}" value="{{provinceSelIndex}}">
+          <view class="input {{!provinceName[provinceSelIndex] ? 'input-placeholder' : ''}}">
+            {{provinceName[provinceSelIndex] || '请选择期望身高'}}{{!provinceName[provinceSelIndex]  ? '' : 'CM'}}
+          </view>
           <input type="text" name="qiwangheight" value="{{provinceName[provinceSelIndex]}}" class="hidden" />
         </picker>
       </view>
@@ -38,15 +17,39 @@
     <view class='insinfo'>
       <view class="lar-r">目前身高</view>
       <view class="form-item-bd">
-        <picker bindchange="changeNowheight" mode="selector" range="{{nowheightName}}" value="{{provinceDefIndex}}">
+        <picker bindchange="changeNowheight" mode="selector" range="{{nowheightName}}" value="{{provinceSelIndex1}}">
           <view class="input {{!nowheightName[provinceSelIndex1] ? 'input-placeholder' : ''}}">{{nowheightName[provinceSelIndex1] || '请选择目前身高'}}{{!nowheightName[provinceSelIndex1]  ? '' : 'CM'}}</view>
           <input type="text" name="nowheight" value="{{nowheightName[provinceSelIndex1]}}" class="hidden" />
         </picker>
       </view>
     </view>
+
+    <view class='insinfo'>
+      <view class="lar-r">父亲身高</view>
+      <view class="form-item-bd">
+        <picker bindchange="changeFheight" mode="selector" range="{{fheightName}}" value="{{provinceSelIndex2}}">
+          <view class="input {{!fheightName[provinceSelIndex2] ? 'input-placeholder' : ''}}">{{fheightName[provinceSelIndex2] || '请选择身高'}}{{!fheightName[provinceSelIndex2]  ? '' : 'CM'}}</view>
+          <input type="text" name="fatherheight" value="{{fheightName[provinceSelIndex2]}}" class="hidden" />
+        </picker>
+      </view>
+    </view>
+    <view class='insinfo'>
+      <view class="lar-r">母亲身高</view>
+      <view class="form-item-bd">
+        <picker bindchange="changeMheight" mode="selector" range="{{mheightName}}" value="{{provinceSelIndex3}}">
+          <view class="input {{!mheightName[provinceSelIndex3] ? 'input-placeholder' : ''}}">{{mheightName[provinceSelIndex3] || '请选择身高'}}{{!mheightName[provinceSelIndex3]  ? '' : 'CM'}}</view>
+          <input type="text" name="motherheight" value="{{mheightName[provinceSelIndex3]}}" class="hidden" />
+        </picker>
+      </view>
+    </view>
+
     <view class='b-tp'>
-     <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">GO</button>
+      <button class="vBtn_ok" formType="submit" loading="{{loading}}" disabled="{{disabled}}">
+        GO
+      </button>
     </view>
   </form>
-  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>
+  <view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">
+    {{messageContent}}
+  </view>
 </view>

@@ -33,8 +33,10 @@
             <view class="textCms">未来身高：{{item.fm.m}}~{{item.fm.f}}CM</view>
             <view class="datetime">
               <label class="tm">
-                <p class="change" bindtap='ChangeHeight'>修改身高</p>
-                <image src="../../image/time.png" class="tmimg"></image>{{item.time}}</label>
+                <p class="change" catchtap='ChangeHeight' data-pid='{{item.pid}}' data-name='{{item.name}}' data-time='{{item.time}} 'data-id='{{item.id}}' data-fheight='{{item.fheight}}' data-mheight='{{item.mheight}}' data-qiwangheight='{{item.qiwangheight}}' data-nowheight='{{item.infos.nowheight}}'>修改身高</p>
+                <p class="tm_p">{{item.time}}</p>
+                <image src="../../image/time.png" class="tmimg"></image>
+                </label>
             </view>
           </view>
         </view>

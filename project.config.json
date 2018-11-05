@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 61,
+			"current": 62,
 			"list": [
 				{
 					"id": -1,
@@ -436,7 +436,13 @@
 				{
 					"id": -1,
 					"name": "pages/shanshi/shanshi",
-					"pathName": "pages/shanshi/shanshi"
+					"pathName": "pages/shanshi/shanshi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改身高页面",
+					"pathName": "pages/changeheight/changeheight"
 				}
 			]
 		}

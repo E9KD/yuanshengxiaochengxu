@@ -11,7 +11,9 @@ page {
   width: 63%;
   margin: 0 auto;
 }
-
+.container{
+  margin-top: 100rpx;
+}
 /*表单  */
 
 label {

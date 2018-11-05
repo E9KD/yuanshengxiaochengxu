@@ -14,10 +14,10 @@
       </view>
       <view class='price'>
         <block wx:if="{{goodsData.money_enum == 1}}">
-          <view style="font-size:12px;">&nbsp;&nbsp;</view>
+          <view style="font-size:12px;">强烈推荐！</view>
         </block>
         <block wx:else>
-          {{goodsData.price}} ￥
+          <view>{{goodsData.price}} ￥</view>
         </block>
       </view>
     </view>

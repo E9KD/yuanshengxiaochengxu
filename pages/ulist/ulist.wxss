@@ -158,12 +158,22 @@ page {
 }
 
 .datetime .tm {
-  text-align: right;
   overflow: hidden;
+  width: 100%;
 }
-
+.datetime .change{
+  float: left;
+  color: red;
+}
 .datetime .tmimg {
   width: 18px;
   height: 18px;
   padding-right: 8rpx;
+  float: right;
+  vertical-align: top;
+}
+.datetime .tm_p {
+  float: right;
+  vertical-align: top;
+  line-height: 18px;
 }

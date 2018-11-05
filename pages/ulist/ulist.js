@@ -45,5 +45,12 @@ Page({
     wx.navigateTo({
       url: '/pages/usercount/index?arr=' + arr,
     })
+  },
+  ChangeHeight(e){
+    let param=e.target.dataset
+    param.userid=this.data.userInfo.userid
+    wx.navigateTo({
+      url: `/pages/changeheight/changeheight?param=${JSON.stringify(param)}`
+    })
   }
 })  
