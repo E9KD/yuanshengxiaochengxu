@@ -2,10 +2,10 @@
   <view class='container'>
     <view class='top-head'>
       <view class='top-pic'>
-        <image src="../../image/WechatIMG11.png" style='width: 100%;height:165rpx;'></image>
-        <view class='top-time'>
+        <image src="../../image/WechatIMG112.jpg" style='width: 70%;height:165rpx;'></image>
+        <!-- <view class='top-time'>
           18-19(8.19-8.25)
-        </view>
+        </view> -->
       </view>
     </view>
 

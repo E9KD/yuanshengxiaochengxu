@@ -8,13 +8,13 @@
         {{goodsData.title}}
       </view>
       <view class='coursetwo-top-buy'>
-        <black style="color:red">热销中</black>
+        <!-- <black style="color:red">热销中</black> -->
         <!-- 30000人查询 -->
         <!-- 15人查询 | 好评度- 0人评论 -->
       </view>
       <view class='price'>
         <block wx:if="{{goodsData.money_enum == 1}}">
-          <view style="font-size:12px;">强烈推荐！</view>
+          <view style="font-size:12px;color:red;">强烈推荐！</view>
         </block>
         <block wx:else>
           <view>{{goodsData.price}} ￥</view>

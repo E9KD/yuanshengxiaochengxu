@@ -643,20 +643,21 @@
   background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
   margin: 0 auto;
   float: left;
-  width:45%;
+  width: 45%;
   height: 40px;
   line-height: 40px;
   color: #fff;
   font-size: 35rpx;
 }
-.bt-center{
-  border-radius:50px;
-background:linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
-margin:0 auto;
-height:30px;
-line-height:30px;
-color:#fff;
-width:100px;
+
+.bt-center {
+  border-radius: 50px;
+  background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  width: 100px;
 
 }
 
@@ -666,7 +667,7 @@ width:100px;
   background: linear-gradient(to right, rgb(227, 139, 39), rgb(227, 200, 39));
   margin: 0 auto;
   float: right;
-  width:45%;
+  width: 45%;
   height: 40px;
   line-height: 40px;
   color: #fff;
@@ -734,6 +735,7 @@ width:100px;
   margin: 0 auto;
   border-bottom: 1rpx solid #fff;
 }
+
 .jinxu {
   display: flex;
   text-align: center;
