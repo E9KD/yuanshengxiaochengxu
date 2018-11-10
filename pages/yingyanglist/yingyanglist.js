@@ -189,6 +189,7 @@ Page({
   },
   yszbg:function(e){
     var arr = JSON.stringify(e.currentTarget.dataset.arr);
+    console.log(arr);
     wx.navigateTo({
       url: '../yszbg/yszbg?arr=' + arr,
     })

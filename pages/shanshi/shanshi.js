@@ -109,6 +109,7 @@ Page({
     var assess6count = 0
     var assess7count = 0
     var assess8count = 0
+    
     for (var i = 1; i < that.data.totalquestion; i++) {
       if (i == assess1list[assess1count]) {
         console.log(assess1);
@@ -116,6 +117,7 @@ Page({
         assess1 += parseInt(that.data.score[i - 1][1])
         console.log(assess1);
       }
+
       if (i == assess2list[assess2count]) {
         assess2count++
         assess2 += parseInt(that.data.score[i - 1][1])

@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 63,
+			"current": 64,
 			"list": [
 				{
 					"id": -1,
@@ -448,7 +448,15 @@
 				{
 					"id": -1,
 					"name": "评价",
-					"pathName": "pages/yingyanglist/yingyanglist"
+					"pathName": "pages/yingyanglist/yingyanglist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打卡评价",
+					"pathName": "pages/yingyanglist/yingyanglist",
+					"query": "scene=&sid=7&pid=6",
+					"scene": "1048"
 				}
 			]
 		}
