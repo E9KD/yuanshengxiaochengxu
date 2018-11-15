@@ -38,10 +38,13 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    if (wx.getStorageSync('fails') == 0) {
-      app.applyNotice();
+    if (!wx.getStorageSync('openid') && !wx.getStorageSync('userid')) {
+      wx.showToast({
+        title: '请先同意授权',
+        icon: 'none'
+      })
+      return false;
     }
-    var that = this;
     setTimeout(function () {
       that.setData({
         loadingHide: true,
@@ -64,10 +67,11 @@ Page({
   getInviteCode: function () {
     var that = this;
     app.getUserInfo();
-    console.log('sdsds', app.globalData);
-    if (wx.getStorageSync('fails') == 0) {
-      app.applyNotice();
-      return false;
+    if (!wx.getStorageSync('openid') && !wx.getStorageSync('userid')) {
+      wx.showToast({
+        title: '请先同意授权',
+        icon: 'none'
+      })
     } else {
       setTimeout(function () {
         var openuid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;

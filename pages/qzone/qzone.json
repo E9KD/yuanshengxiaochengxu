@@ -1,5 +1,4 @@
 {
   "navigationBarTitleText": "生长空间",
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50
+  "enablePullDownRefresh": true
 }

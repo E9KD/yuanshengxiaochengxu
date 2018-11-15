@@ -73,6 +73,12 @@
         "selectedIconPath": "image/a8.png"
       },
       {
+        "pagePath": "pages/qzone/qzone",
+        "text": "生长空间",
+        "iconPath": "image/a7.png",
+        "selectedIconPath": "image/a8.png"
+      },
+      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "image/a9.png",

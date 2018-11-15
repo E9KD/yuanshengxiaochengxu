@@ -51,11 +51,11 @@ Page({
   onLoad: function () {
     var self = this;
     var fenxiao = app.globalData.fenxiao;
-    util.getarrimg(function (data) {
-      self.setData({
-        movies: data['banner']
-      });
-    })
+    // util.getarrimg(function (data) {
+    //   self.setData({
+    //     movies: data['banner']
+    //   });
+    // })
     if (fenxiao == 1) {
       self.setData({
         openfenxiao: true,

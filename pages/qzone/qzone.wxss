@@ -1,4 +1,6 @@
 page {
+  line-height: 1.2;
+  font-weight: 300
 }
 
 .tui-menu-list {
@@ -19,31 +21,6 @@ page {
 
 .tui-menu-list:last-child:before {
   height: 0;
-}
-
-/*搜索*/
-
-.search {
-  flex: auto;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  height: 100vh;
-}
-
-/*搜索结果*/
-
-.search-result {
-  flex: auto;
-  position: relative;
-}
-
-.search-result scroll-view {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
 }
 
 .result-item {
@@ -82,10 +59,14 @@ page {
 /*心  */
 
 .xin {
-  width: 30rpx;
-  height: 30rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
+.xin2{
+  width:30rpx;
+  height: 30rpx;
+}
 .oneImg {
   width: auto;
   height: auto;
@@ -200,8 +181,8 @@ page {
 .time {
   margin-top: 20rpx;
   width: 580rpx;
-  height: 20px;
-  font-size: 10pt;
+  height: 70rpx;
+  /* font-size: 10pt; */
   color: #ccc;
   margin-left: 140rpx;
 }
@@ -217,8 +198,8 @@ page {
 }
 
 .biao {
-  width: 100rpx;
-  height: 40rpx;
+  /* width: 40rpx; */
+  /* height: 40rpx; */
   overflow: hidden;
   float: right;
 }
@@ -258,8 +239,8 @@ page {
 }
 
 .dianzan-biao {
-  width: 35rpx;
-  height: 35rpx;
+  width: 33rpx;
+  height: 36rpx;
   position: relative;
   overflow: hidden;
   margin-left: 10rpx;
@@ -269,8 +250,8 @@ page {
   position: relative;
   color: #576b95;
   font-size: 10pt;
-  margin-top: -29rpx;
-  margin-left: 50rpx;
+  /* margin-top: -29rpx;
+  margin-left: 50rpx; */
 }
 
 /*评论*/

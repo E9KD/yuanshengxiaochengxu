@@ -69,7 +69,7 @@ Page({
     }
   },
   onLoad: function (e) {
-    this.onShow();
+    // this.onShow();
   },
   getuserinfo: function () {
     return this.data.userInfo;
@@ -86,7 +86,7 @@ Page({
   },
   onShow: function () {
     var that = this;
-    var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;
+    var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : 'undefined';
     var sid = that.data.sid;
     var uid = openid;
     var keys = {

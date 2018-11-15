@@ -255,9 +255,12 @@ Page({
     }
   },
   onShow: function () {
-    if (wx.getStorageSync('fails') == 0) {
-      app.applyNotice();
-      return false;
+    var that = this;
+    if (!wx.getStorageSync('openid') && !wx.getStorageSync('userid')) {
+      wx.showToast({
+        title: '请先同意授权',
+        icon: 'none'
+      })
     } else {
       this.setAreaData();
       this.onLoad();

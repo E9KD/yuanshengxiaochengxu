@@ -696,12 +696,16 @@ Page({
           menuList: menuList
         })
       })
-      app.getUserInfo(function(personInfo) {
-        self.setData({
-          userInfo: personInfo,
-          openid: openid,
-        })
+      self.setData({
+        userInfo: wx.getStorageInfoSync("userInfo"),
+        openid:wx.getStorageInfoSync("openid"),
       })
+      // app.getUserInfo(function(personInfo) {
+      //   self.setData({
+      //     userInfo: personInfo,
+      //     openid: openid,
+      //   })
+      // })
     }
   },
   //开始答题跳转按钮

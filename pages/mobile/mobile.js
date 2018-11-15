@@ -143,8 +143,11 @@ Page({
   onLoad: function () {
     var that = this;
     var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;
-    if (wx.getStorageSync('fails') == 0) {
-      app.applyNotice();
+    if (!wx.getStorageSync('openid') && !wx.getStorageSync('userid')) {
+      wx.showToast({
+        title: '请先同意授权',
+        icon: 'none'
+      })
       return false;
     }
     app.getUserInfo(function (userInfo) {

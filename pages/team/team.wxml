@@ -2,7 +2,7 @@
   <view class="search-result">
     <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
       <view style='width:100vw;'>
-        <swiper class='swiper-box'autoplay="true" interval="5000" duration="2000" style='height:40vh'>
+        <!-- <swiper class='swiper-box'autoplay="true" interval="5000" duration="2000" style='height:40vh'>
           <block wx:for="{{movies}}" wx:key="key">
             <swiper-item>
               <view>
@@ -10,7 +10,7 @@
               </view>
             </swiper-item>
           </block>
-        </swiper>
+        </swiper> -->
         <view class='' style='width:100vw;margin: auto;'>
           <view style=' text-align: center;color:#7a7a7a;'>
             <view style='font-size:28px;color:#585656;'>TEAM</view>

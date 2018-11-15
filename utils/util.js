@@ -872,7 +872,9 @@ function getUserOpenid(url, callback) {
               success: function (res) {
                 res.data.iv = code;
                 wx.setStorageSync('openid', res.data.openId);
-                wx.setStorageSync('fails', '1');
+                wx.setStorageSync('userid', res.data.userid);
+                wx.setStorageSync('nickname', res.data.nickName);
+                wx.setStorageSync('unionId', res.data.unionId);
                 callback(res.data);
               },
               fail: function () {

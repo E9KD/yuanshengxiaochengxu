@@ -7,8 +7,6 @@ var qzone = 'https://wx.biergao.vip/api/qzone/';
 Page({
   data:
   {
-    userInfo: {},
-    userStatus: {},
     content: false,
     imgStr: null,
     httpImg: [],
@@ -17,20 +15,16 @@ Page({
   },
   onLoad: function (e) {
     var that = this;
-    var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;
-    setTimeout(function () {
-      if (app.globalData.userInfo) {
-        that.setData({
-          userInfo: app.globalData.userInfo,
-          openid: openid
-        })
-      } else {
-        app.applyNotice();
-        return false;
-      }
-    }, 990)
-
-    // console.log(event);
+    var openid = wx.getStorageSync('openid');
+    var avatarUrl = wx.getStorageSync('avatarUrl');
+    var userid = wx.getStorageSync('userid');
+    var nickname = wx.getStorageSync('nickname');
+    that.setData({
+      avatarUrl: avatarUrl,
+      openid: openid,
+      suerid: userid,
+      nickname: nickname
+    })
   },
   onShow: function () {
   },
@@ -55,24 +49,21 @@ Page({
       console.log(e);
       var url = qzone + 'setresouse';
       var keys = {
-        nickName: that.data.userInfo.nickName,
+        nickName: that.data.nickname,
         content: e.detail.value.content,
-        userId: that.data.userInfo.openId ? that.data.userInfo.openId : that.data.openId,
+        userId: that.data.openid,
         imgStr: that.data.imgStr,
-        headimg: that.data.userInfo.avatarUrl
+        headimg: that.data.avatarUrl
       };
       util.getAj(url, keys, 'POST', function (data) {
         if (data) {
           that.bindLoding('发布成功');
           var timeOut = setInterval(function () {
-            // wx.switchTab({
-            //   url: '../qzone/qzone'
-            // })
             wx.navigateBack({
               delta: 1
             })
             clearInterval(timeOut)
-          }, 1500)
+          }, 800)
         } else {
           that.bindLoding('发布失败');
         }

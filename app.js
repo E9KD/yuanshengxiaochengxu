@@ -30,9 +30,13 @@ App({
                     'content-type': 'application/x-www-form-urlencoded'
                   },
                   success: function (res) {
-                    //console.log(res.data.openId);
+                    console.log(res);
                     wx.setStorageSync('openid', res.data.openId);
-                    wx.setStorageSync('fails', '1');
+                    wx.setStorageSync('userid', res.data.userid);
+                    wx.setStorageSync('nickname', res.data.nickName);
+                    wx.setStorageSync('unionId', res.data.unionId);
+                    wx.setStorageSync('avatarUrl', res.data.avatarUrl);
+                    wx.setStorageSync('userInfo', res.data);
                     that.globalData.openid = res.data.openId;
                     that.globalData.openid = res.data.openId;
                     that.globalData.userInfo = res.data;
@@ -91,8 +95,13 @@ App({
                               'content-type': 'application/x-www-form-urlencoded'
                             },
                             success: function (data) {
+                              console.log(data);
                               wx.setStorageSync('openid', data.data.openId);
-                              wx.setStorageSync('fails', '1');
+                              wx.setStorageSync('userid', data.data.userid);
+                              wx.setStorageSync('nickname', data.data.nickName);
+                              wx.setStorageSync('unionId', data.data.unionId);
+                              wx.setStorageSync('avatarUrl', data.data.avatarUrl);
+                              wx.setStorageSync('userInfo', res.data);
                               self.globalData.openid = data.data.openId;
                               self.globalData.userInfo = data.data;
                               typeof cb == "function" && cb(self.globalData.userInfo)
@@ -136,8 +145,13 @@ App({
                             'content-type': 'application/x-www-form-urlencoded'
                           },
                           success: function (data) {
+                            console.log(data);
                             wx.setStorageSync('openid', data.data.openId);
-                            wx.setStorageSync('fails', '1');
+                            wx.setStorageSync('userid', data.data.userid);
+                            wx.setStorageSync('nickname', data.data.nickName);
+                            wx.setStorageSync('unionId', data.data.unionId);
+                            wx.setStorageSync('avatarUrl', data.data.avatarUrl);
+                            wx.setStorageSync('userInfo', res.data);
                             self.globalData.openid = data.data.openId;
                             self.globalData.userInfo = data.data;
                             typeof cb == "function" && cb(self.globalData.userInfo)

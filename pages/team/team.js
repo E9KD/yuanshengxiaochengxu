@@ -28,10 +28,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    this.keywordSearch();
-  },
-  onShow: function() {
-    
     var self = this;
     var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;
     var keys = {
@@ -51,18 +47,18 @@ Page({
       }
       return false;
     } else {
-    var fenxiao = app.globalData.fenxiao;
-    if(fenxiao==1){
-      var openfenxiao = true;
-    }else{
-      var openfenxiao = false;
-    }
-    util.getarrimg(function (data) {
-      self.setData({
-        movies: data['banner'],
-        openfenxiao: openfenxiao
-      });
-    })
+      var fenxiao = app.globalData.fenxiao;
+      if (fenxiao == 1) {
+        var openfenxiao = true;
+      } else {
+        var openfenxiao = false;
+      }
+      // util.getarrimg(function (data) {
+      //   self.setData({
+      //     movies: data['banner'],
+      //     openfenxiao: openfenxiao
+      //   });
+      // })
     }
     self.keywordSearch();
   },

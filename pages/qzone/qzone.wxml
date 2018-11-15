@@ -1,96 +1,78 @@
-<view class="tui-content">
-  <!-- <view class="tui-menu-list" wx:for="{{dataList}}">Item -- {{item}}</view> -->
-  <view class="tui-menu-list">
-    <!--背景小图标-->
-    <view class="bg">
-      <image class="baseimg" src="../../image/quanbg.jpg" bindload='imageLoad' style='height:{{picHeight}}px'></image>
-    </view>
-    <!--背景图底部大头像-->
-    <view class="headimg" style='width:{{picHeight}}px;height:35px'>
-      <!-- 头部选项 -->
-      <view class="swiper-tab-item {{currentTab==3 ? 'on' :'off'}} {{currentTab==3 ? 'left' :''}}" data-current="3" bindtap="clickTab" style='float:left;width:50%;'>空间动态</view>
-      <view class="swiper-tab-item {{currentTab==1 ? 'on' :'off'}} {{currentTab==3 ? '' :'right'}}" data-current="1" bindtap="clickTab" style='float:right;width:50%;'>官方消息</view>
-    </view>
-    <!--占位行-->
-    <view class="lie"></view>
-  </view>
-</view>
-<view class="search">
-  <view class="search-result">
-    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
-      <!-- <view class='box'> -->
-      <view class="result-item" wx:for="{{searchSongList}}" wx:key="key">
-        <!-- <view class="content" wx:for="{{resultData}}" wx:key="item"> -->
-        <!--头像-->
-        <view class="head">
-          <image class="baseimg" src="{{item.headimg}}" mode="scaleToFill"></image>
-        </view>
-        <!--昵称-->
-        <text class="wz">{{item.name}}</text>
-        <!--内容-->
-        <text class="desc">{{item.content}}</text>
-        <!--显示上传图片-->
-        <view wx:if="{{item.imgnum == 1}}">
-          <view class="images-wrapper">
-            <view class="images-list">
-              <!-- <block wx:for="{{item.imglist}}" wx:for-item="image">
-                <image src="https://wx.biergao.vip/uploads/thumb{{image}}" class="images-image1" data-src="{{image}}" data-count="{{item.imglist}}" bindtap="previewImage" mode="widthFix"></image>
-              </block> -->
-               <black wx:for='{{item.imglist}}' wx:key='i'>
-                <image class="images-image1" src='https://wx.biergao.vip/uploads/qzone{{item}}' data-id='{{i}}' mode="widthFix"  bindtap='previewImg'></image>
-              </black> 
-            </view>
+<view wx:if="{{isshow > 0}}">
+  <scroll-view scroll-y="true">
+    <!-- <view class='box'> -->
+    <view class="result-item" wx:for="{{searchSongList}}" wx:key="key">
+      <!-- <view class="content" wx:for="{{resultData}}" wx:key="item"> -->
+      <!--头像-->
+      <view class="head">
+        <image class="baseimg" src="{{item.headimg}}" mode="scaleToFill"></image>
+      </view>
+      <!--昵称-->
+      <text class="wz">{{item.name}}</text>
+      <!--内容-->
+      <text class="desc">{{item.content}}</text>
+      <!--显示上传图片-->
+      <view wx:if="{{item.imgnum == 1}}">
+        <view class="images-wrapper">
+          <view class="images-list">
+            <block wx:for="{{item.imglist}}" wx:for-item="image" wx:key='i'>
+              <image class="images-image1" src="https://wx.biergao.vip/uploads/thumb{{image}}" data-src="{{image}}" data-count="{{item.imgstr}}" bindtap="previewImage"></image>
+            </block>
           </view>
         </view>
-        <view wx:elif="{{item.imgnum > 1}}">
-          <view class="images-wrapper">
-            <view class="images-list">
-              <!-- <block wx:for="{{item.imglist}}" wx:for-item="image">
-                <image src="https://wx.biergao.vip/uploads/qzone{{image}}" class="images-image1" data-src="{{image}}" data-count="{{item.imgstr}}" bindtap="previewImage" mode="widthFix"></image>
-              </block> -->
-              <black wx:for='{{item.imglist}}' wx:key='i'>
-                <image class="images-image" src='https://wx.biergao.vip/uploads/qzone{{item}}' data-id='{{i}}' bindtap='previewImg'></image>
-              </black>
-            </view>
+      </view>
+      <view wx:elif="{{item.imgnum > 1}}">
+        <view class="images-wrapper">
+          <view class="images-list">
+            <block wx:for="{{item.imglist}}" wx:for-item="image" wx:key='i'>
+              <image class="images-image" src="https://wx.biergao.vip/uploads/thumb{{image}}" data-src="{{image}}" data-count="{{item.imgstr}}" bindtap="previewImage"></image>
+            </block>
           </view>
         </view>
-        <!--显示发布时间-->
-        <view class="time">
-          {{item.datatime}}
-          <block wx:if="{{item.dianzan}}">
-            <view class="biao">
-              <image class="xin" src="/image/zan1.png" style='line-height: 40rpx;'></image>
-              <view style='float:right;'>点赞</view>
-            </view>
-          </block>
-          <block wx:else>
-            <view class="biao">
-              <image class="xin" src="/image/zan.png" bindtap="bindDianZan" data-id="{{item.id}}" style='line-height:40rpx; '></image>
-              <view style='float:right;'>点赞</view>
-            </view>
-          </block>
-        </view>
-
-        <!--显示点赞-->
-
-        <block wx:if="{{item.dianzanlist}}">
-          <view class="dianzan-box">
-            <view class="dianzan-biao">
-              <image class="xin" src="/image/zan.png" mode="aspectFit" style='line-height:35rpx;'></image>
-            </view>
-            <view class="dianzan-text">{{item.dianzanlist}}</view>
+      </view>
+      <!--显示发布时间-->
+      <view class="time">
+        {{item.datatime}}
+        <block wx:if="{{item.dianzan}}">
+          <view class="biao">
+            已赞
+            <!-- <image class="xin" src="/image/zan1.png" style='line-height: 40rpx;'></image> -->
+            <!-- <view style='float:right;'>点赞</view> -->
           </view>
         </block>
-        <view style='height:30rpx;'></view>
+        <block wx:else>
+          <view class="biao" bindtap="bindDianZan" data-id="{{item.id}}">
+            点赞
+            <!-- <image class="xin" src="/image/zan.png" style='line-height:40rpx; '></image> -->
+            <!-- <view style='float:right;'>点赞</view> -->
+          </view>
+        </block>
       </view>
 
-      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
-      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
-    </scroll-view>
+      <!--显示点赞-->
+
+      <block wx:if="{{item.dianzanlist}}">
+        <view class="dianzan-box">
+          <!-- <view class="dianzan-biao">
+          <image class="xin2" src="/image/zan1.png" mode="aspectFit" style='line-height:35rpx;'></image>
+        </view> -->
+          <view class="dianzan-text">
+            <image class="xin2" src="/image/zan1.png"></image>{{item.dianzanlist}}</view>
+        </view>
+      </block>
+      <view style='height:30rpx;'></view>
+    </view>
+
+    <view class="loading" hidden="{{!searchLoading}}">正在载入</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">我是有底线的</view>
+  </scroll-view>
+  <view class="qbutton">
+    <view style='width:100%;height:100%; ' bindtap='addqzone'>
+      <image src='../../image/qianbi.png ' style='width:70rpx;height:70rpx '></image>
+    </view>
   </view>
 </view>
-<view class="qbutton">
-  <view style='width:100%;height:100%; ' bindtap='addqzone'>
-    <image src='../../image/qianbi.png ' style='width:70rpx;height:70rpx '></image>
-  </view>
+<view wx:else>
+  <view style='width:100%;height:10rpx;background:#F6F6F6;'></view>
+  <view style='width:100%;font-size:60rpx;color:#C1C1C1;text-align:center;margin-top:25%'>敬请期待</view>
 </view>

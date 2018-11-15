@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -9,9 +9,9 @@
 		"nodeModules": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
+	"libVersion": "2.4.0",
 	"appid": "wx41e93e31c9d4dc26",
-	"projectname": "project5",
+	"projectname": "project5-5",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 64,
+			"current": 63,
 			"list": [
 				{
 					"id": -1,
@@ -448,15 +448,7 @@
 				{
 					"id": -1,
 					"name": "评价",
-					"pathName": "pages/yingyanglist/yingyanglist",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "打卡评价",
-					"pathName": "pages/yingyanglist/yingyanglist",
-					"query": "scene=&sid=7&pid=6",
-					"scene": "1048"
+					"pathName": "pages/yingyanglist/yingyanglist"
 				}
 			]
 		}
