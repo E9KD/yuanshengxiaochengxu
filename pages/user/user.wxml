@@ -39,9 +39,9 @@
     <view class="list_b" bindtap='childadd'>
       添加孩子
     </view>
-    <navigator class="list_b" url='../order/order?"openid"={{openid}}'>
+    <view class="list_b" bindtap='GoOrder'>
       我的订单
-    </navigator>
+    </view>
     <navigator class="list_b" url="../vip/vip">
       成为VIP
     </navigator>

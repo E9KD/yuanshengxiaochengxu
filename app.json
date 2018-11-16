@@ -57,32 +57,32 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "image/a1.png",
-        "selectedIconPath": "image/a2.png"
+        "iconPath": "image/a2.png",
+        "selectedIconPath": "image/a1.png"
       },
       {
         "pagePath": "pages/team/team",
         "text": "服务",
-        "iconPath": "image/a3.png",
-        "selectedIconPath": "image/a4.png"
+        "iconPath": "image/a4.png",
+        "selectedIconPath": "image/a3.png"
       },
       {
         "pagePath": "pages/keceng/index",
         "text": "课程",
-        "iconPath": "image/a7.png",
-        "selectedIconPath": "image/a8.png"
+        "iconPath": "image/a6.png",
+        "selectedIconPath": "image/a5.png"
       },
       {
         "pagePath": "pages/qzone/qzone",
         "text": "生长空间",
-        "iconPath": "image/a7.png",
-        "selectedIconPath": "image/a8.png"
+        "iconPath": "image/a8.png",
+        "selectedIconPath": "image/a7.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "image/a9.png",
-        "selectedIconPath": "image/a10.png"
+        "iconPath": "image/a10.png",
+        "selectedIconPath": "image/a9.png"
       }
     ]
   },

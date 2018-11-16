@@ -28,6 +28,11 @@ Page({
       }
     }, 990)
   },
+  GoOrder(){
+    wx.navigateTo({
+      url: `../order/order?openid=${this.data.openid}&userid=${this.data.userInfo.userid}&unionId=${this.data.userInfo.unionId}`
+    })
+  },
   //添加按钮
   childadd: function (e) {
     var that = this;

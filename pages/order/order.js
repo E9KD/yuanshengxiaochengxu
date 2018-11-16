@@ -10,7 +10,9 @@ Page({
     callbackcount: 15,      //返回数据的个数  
     searchLoading: false, //"上拉加载"的变量，默认false，隐藏  
     searchLoadingComplete: false , //“没有数据”的变量，默认false，隐藏 
-    currentTab: 3
+    currentTab: 3,
+    userid:null,
+    unionId:null,
   },
   onReady: function () {
     var self = this;
@@ -37,13 +39,18 @@ Page({
   /**
   * 生命周期函数--监听页面加载
   */
-  onLoad: function (options) {
+  onLoad: function (x) {
     // var openid = wx.getStorageSync('openid') ? wx.getStorageSync('openid') : app.globalData.openid;
     // this.keywordSearch();
+    this.setData({
+      userid:x.userid,
+      unionId:x.unionId
+    });
   },
   onShow:function(){
     this.keywordSearch();
   },
+  
   //输入框事件，每输入一个字符，就会触发一次  
   bindKeywordInput: function (e) {
     console.log("输入框事件")
